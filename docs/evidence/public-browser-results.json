@@ -1,0 +1,13 @@
+{
+  "base": "https://syudu41.github.io/Algorithm-Arena",
+  "results": [
+    "PASS About → Sorting navigation",
+    "PASS packaged tutorial duration and no autoplay",
+    "PASS Explain starts real video",
+    "PASS speed control changes video playback rate",
+    "PASS public custom-render boundary",
+    "PASS nested hash route reload preserves tutorial",
+    "PASS no browser runtime exceptions"
+  ],
+  "errors": []
+}

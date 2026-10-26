@@ -1,0 +1,80 @@
+[
+  {
+    "asset": ".nojekyll",
+    "status": 200,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "asset": "app.js",
+    "status": 200,
+    "bytes": 12281,
+    "sha256": "0813d5472472b9790384867a6d7dbb3ced6f92a58947243f8d1db2b947be07e4"
+  },
+  {
+    "asset": "config.js",
+    "status": 200,
+    "bytes": 132,
+    "sha256": "d713fb7dda4dc76e1890e7985190c78e11b344ab5ab46aa0cd2ed535133a16e2"
+  },
+  {
+    "asset": "fonts/LICENSE-CMU.txt",
+    "status": 200,
+    "bytes": 6872,
+    "sha256": "41c1d332b883e8b3d517077220c8962159e49ee1934fe5fe2d5e05bb0b263e3d"
+  },
+  {
+    "asset": "fonts/cmunbi.ttf",
+    "status": 200,
+    "bytes": 476440,
+    "sha256": "fd4e94d71d778bbd334d7203227f20a9bf3c0ca98e3e58c0b2a0662cb4930972"
+  },
+  {
+    "asset": "fonts/cmunbx.ttf",
+    "status": 200,
+    "bytes": 609796,
+    "sha256": "82d500c7092f44de9de332b8ffdc16a6e7ce5b042832b7aa0203a6cea8f4f263"
+  },
+  {
+    "asset": "fonts/cmunrm.ttf",
+    "status": 200,
+    "bytes": 639132,
+    "sha256": "cf2b28d1f36b680bc5851196c0da97d32ed564d8a703a9636f094092934babe6"
+  },
+  {
+    "asset": "fonts/cmunti.ttf",
+    "status": 200,
+    "bytes": 486980,
+    "sha256": "0473b87393141b7ba311e8a590c568e8a82e29dc417574eb748c0093cce0911d"
+  },
+  {
+    "asset": "index.html",
+    "status": 200,
+    "bytes": 973,
+    "sha256": "54ad259a6ecbad1cfde30ae4bfb9c9ceb5258bdc2a3c9f203c2eecf666e60bed"
+  },
+  {
+    "asset": "media/bubble-poster.png",
+    "status": 200,
+    "bytes": 119562,
+    "sha256": "e11f174b5f9f7b7cae34a2e6a6d7c91760c1344719686614f1e8251602a7c0c7"
+  },
+  {
+    "asset": "media/bubble-tutorial.mp4",
+    "status": 200,
+    "bytes": 2331029,
+    "sha256": "e2613e9a54c1c143114e538afdc4a0af7500b77b1d5b9589686ffa0641a43e99"
+  },
+  {
+    "asset": "style.css",
+    "status": 200,
+    "bytes": 6868,
+    "sha256": "62f380fbdc467144c8806d16b3a26f193847b379d703de6ad7dfcc17bc73c4bf"
+  },
+  {
+    "asset": "validation.js",
+    "status": 200,
+    "bytes": 475,
+    "sha256": "5551ba98dbdade6f5e77268afef33d897b874ac2ac9e05f21a9838d669cf96d0"
+  }
+]

@@ -1,0 +1,198 @@
+[
+  {
+    "scene": "custom",
+    "values": [
+      5,
+      2,
+      4,
+      1,
+      3
+    ],
+    "render_seconds": 17.53,
+    "renderer_version": "bubble-v2-tex",
+    "path": "/home/lab335a/Sudarshan/Random-Papers-Projects/Algorithm-Arena/renderer/renders/verification/custom-52413.mp4",
+    "wall_seconds": 18.82,
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "pix_fmt": "yuv420p",
+          "r_frame_rate": "30/1"
+        }
+      ],
+      "format": {
+        "duration": "19.466667",
+        "size": "966187"
+      }
+    },
+    "name": "custom-52413"
+  },
+  {
+    "scene": "custom",
+    "values": [
+      8,
+      3,
+      7,
+      2,
+      6
+    ],
+    "render_seconds": 17.07,
+    "renderer_version": "bubble-v2-tex",
+    "path": "/home/lab335a/Sudarshan/Random-Papers-Projects/Algorithm-Arena/renderer/renders/verification/custom-83726.mp4",
+    "wall_seconds": 18.18,
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "pix_fmt": "yuv420p",
+          "r_frame_rate": "30/1"
+        }
+      ],
+      "format": {
+        "duration": "19.466667",
+        "size": "980219"
+      }
+    },
+    "name": "custom-83726"
+  },
+  {
+    "scene": "tutorial",
+    "values": null,
+    "render_seconds": 42.74,
+    "renderer_version": "bubble-v2-tex",
+    "path": "/home/lab335a/Sudarshan/Random-Papers-Projects/Algorithm-Arena/renderer/renders/verification/tutorial.mp4",
+    "wall_seconds": 43.9,
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "pix_fmt": "yuv420p",
+          "r_frame_rate": "30/1"
+        }
+      ],
+      "format": {
+        "duration": "37.566667",
+        "size": "2326737"
+      }
+    },
+    "name": "tutorial"
+  },
+  {
+    "scene": "custom",
+    "values": [
+      10,
+      9,
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "render_seconds": 84.22,
+    "renderer_version": "bubble-v2-tex",
+    "path": "/home/lab335a/Sudarshan/Random-Papers-Projects/Algorithm-Arena/renderer/renders/verification/worst10.mp4",
+    "wall_seconds": 85.46,
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "pix_fmt": "yuv420p",
+          "r_frame_rate": "30/1"
+        }
+      ],
+      "format": {
+        "duration": "52.400000",
+        "size": "4488779"
+      }
+    },
+    "name": "worst10"
+  },
+  {
+    "scene": "custom",
+    "values": [
+      10,
+      9,
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "render_seconds": 63.43,
+    "renderer_version": "bubble-v2-tex",
+    "path": "/home/lab335a/Sudarshan/Random-Papers-Projects/Algorithm-Arena/renderer/renders/verification/worst10-warm.mp4",
+    "wall_seconds": 64.74,
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "pix_fmt": "yuv420p",
+          "r_frame_rate": "30/1"
+        }
+      ],
+      "format": {
+        "duration": "52.400000",
+        "size": "4488779"
+      }
+    },
+    "name": "worst10-warm"
+  },
+  {
+    "scene": "custom",
+    "values": [
+      5,
+      2,
+      4,
+      1,
+      3
+    ],
+    "render_seconds": 18.46,
+    "renderer_version": "bubble-v2-tex",
+    "path": "/home/lab335a/Sudarshan/Random-Papers-Projects/Algorithm-Arena/renderer/renders/verification/custom-52413-warm.mp4",
+    "wall_seconds": 19.61,
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "pix_fmt": "yuv420p",
+          "r_frame_rate": "30/1"
+        }
+      ],
+      "format": {
+        "duration": "19.466667",
+        "size": "966187"
+      }
+    },
+    "name": "custom-52413-warm"
+  }
+]

@@ -1,0 +1,10 @@
+.venv-manim/
+renderer/.cache/
+renderer/renders/
+__pycache__/
+.pytest_cache/
+node_modules/
+dist/
+.remember/
+renderer/media/
+media/texts/
