@@ -1,0 +1,22 @@
+{
+  "results": [
+    "PASS About → Sorting navigation",
+    "PASS packaged tutorial duration and no autoplay",
+    "PASS Explain starts real video",
+    "PASS speed control changes video playback rate",
+    "PASS invalid input focused and rejected",
+    "PASS exact custom input and metrics",
+    "PASS custom film decodes and waits for user play",
+    "PASS exact cache hit label",
+    "PASS mobile layout fits viewport",
+    "PASS keyboard reaches submit button",
+    "PASS API-down preserves tutorial",
+    "PASS UI failed (injected HTTP response)",
+    "PASS UI timed_out (injected HTTP response)",
+    "PASS Stop waiting keeps queued response from attaching a result (injected queue)",
+    "PASS replacement ignores older queued observation (injected queue)",
+    "PASS static/public mode is honest about local rendering",
+    "PASS no browser runtime exceptions"
+  ],
+  "errors": []
+}

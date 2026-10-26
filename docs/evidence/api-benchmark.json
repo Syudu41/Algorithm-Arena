@@ -1,0 +1,204 @@
+[
+  {
+    "values": [
+      8,
+      3,
+      7,
+      2,
+      6
+    ],
+    "repeat": 0,
+    "cache_hit": false,
+    "request_to_ready_seconds": 23.4443,
+    "metadata": {
+      "id": "605c7c1114dea5d62c296f5abedcd6d4",
+      "status": "ready",
+      "initial": [
+        8,
+        3,
+        7,
+        2,
+        6
+      ],
+      "final": [
+        2,
+        3,
+        6,
+        7,
+        8
+      ],
+      "comparisons": 10,
+      "swaps": 7,
+      "cached": false,
+      "fingerprint": "2d5745bd496f1318cda64a09fef5511b1825b80a41a76bd54c5ccaa650b968a7",
+      "video_url": "/api/videos/605c7c1114dea5d62c296f5abedcd6d4.mp4",
+      "render_seconds": 22.01,
+      "wall_seconds": 23.25,
+      "bytes": 980219,
+      "duration_seconds": 19.467,
+      "width": 1280,
+      "height": 720,
+      "fps": 30.0,
+      "codec": "h264"
+    }
+  },
+  {
+    "values": [
+      8,
+      3,
+      7,
+      2,
+      6
+    ],
+    "repeat": 1,
+    "cache_hit": true,
+    "request_to_ready_seconds": 0.0023,
+    "metadata": {
+      "id": "605c7c1114dea5d62c296f5abedcd6d4",
+      "status": "ready",
+      "initial": [
+        8,
+        3,
+        7,
+        2,
+        6
+      ],
+      "final": [
+        2,
+        3,
+        6,
+        7,
+        8
+      ],
+      "comparisons": 10,
+      "swaps": 7,
+      "cached": true,
+      "fingerprint": "2d5745bd496f1318cda64a09fef5511b1825b80a41a76bd54c5ccaa650b968a7",
+      "video_url": "/api/videos/605c7c1114dea5d62c296f5abedcd6d4.mp4",
+      "render_seconds": 22.01,
+      "wall_seconds": 23.25,
+      "bytes": 980219,
+      "duration_seconds": 19.467,
+      "width": 1280,
+      "height": 720,
+      "fps": 30.0,
+      "codec": "h264"
+    }
+  },
+  {
+    "values": [
+      10,
+      9,
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "repeat": 0,
+    "cache_hit": false,
+    "request_to_ready_seconds": 81.1146,
+    "metadata": {
+      "id": "2d728f59ca45e32d8ff24843c15324c6",
+      "status": "ready",
+      "initial": [
+        10,
+        9,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1
+      ],
+      "final": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "comparisons": 45,
+      "swaps": 45,
+      "cached": false,
+      "fingerprint": "2d5745bd496f1318cda64a09fef5511b1825b80a41a76bd54c5ccaa650b968a7",
+      "video_url": "/api/videos/2d728f59ca45e32d8ff24843c15324c6.mp4",
+      "render_seconds": 79.45,
+      "wall_seconds": 81.09,
+      "bytes": 4488779,
+      "duration_seconds": 52.4,
+      "width": 1280,
+      "height": 720,
+      "fps": 30.0,
+      "codec": "h264"
+    }
+  },
+  {
+    "values": [
+      10,
+      9,
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "repeat": 1,
+    "cache_hit": true,
+    "request_to_ready_seconds": 0.0026,
+    "metadata": {
+      "id": "2d728f59ca45e32d8ff24843c15324c6",
+      "status": "ready",
+      "initial": [
+        10,
+        9,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1
+      ],
+      "final": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "comparisons": 45,
+      "swaps": 45,
+      "cached": true,
+      "fingerprint": "2d5745bd496f1318cda64a09fef5511b1825b80a41a76bd54c5ccaa650b968a7",
+      "video_url": "/api/videos/2d728f59ca45e32d8ff24843c15324c6.mp4",
+      "render_seconds": 79.45,
+      "wall_seconds": 81.09,
+      "bytes": 4488779,
+      "duration_seconds": 52.4,
+      "width": 1280,
+      "height": 720,
+      "fps": 30.0,
+      "codec": "h264"
+    }
+  }
+]
