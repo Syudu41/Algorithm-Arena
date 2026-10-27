@@ -10,6 +10,4 @@
 .about-hero .visual-note{margin-top:34px}
 .intro-art{margin:0;min-width:0;text-align:center}
 .intro-art img{display:block;width:100%;height:auto;aspect-ratio:1;max-width:480px;margin:auto}
-.intro-art figcaption{margin-top:4px}
-.intro-art #intro-motion{font-size:14px;color:var(--muted);background:transparent;border-color:var(--line);padding:6px 14px}
 @media(max-width:760px){.about-hero{grid-template-columns:1fr;gap:28px;padding-block:24px 44px}.intro-art{order:-1}.intro-art img{max-width:320px}.about-hero h1{font-size:46px}.about-hero .visual-note{margin-top:28px}}
