@@ -336,3 +336,11 @@ Live page: https://syudu41.github.io/Algorithm-Arena/#/about .
 The same ten Chrome checks also passed against the live GitHub Pages URL;
 refreshed the recorded screenshots/results from that public run. Only the
 About-page GIF/layout and build asset copying changed in the frontend.
+
+### About animation control follow-up — 2026-10-27
+
+At the user's request, removed the Pause/Play button and its styles/listeners.
+The GIF continues looping automatically. Reduced-motion preferences still select
+the static image, including preference changes while About is open. The GIF
+asset itself is unchanged. `node --check web/app.js`, `npm run build`, `npm test`,
+and `git diff --check` passed; no animation re-render was necessary.
