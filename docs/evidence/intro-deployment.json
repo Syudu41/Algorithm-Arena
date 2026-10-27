@@ -1,0 +1,26 @@
+[
+  {
+    "asset": "app.js",
+    "status": 200,
+    "bytes": 13434,
+    "sha256": "7ca6bc115aa577dd19390403855f471b76fb10c0dcd90b166f50c27431ab1db6"
+  },
+  {
+    "asset": "style.css",
+    "status": 200,
+    "bytes": 7753,
+    "sha256": "ad2353d3ad11bd1756b457b543afb39cfba24443b4b1c95d0451d9b2a13f7442"
+  },
+  {
+    "asset": "media/algorithm-arena-intro.gif",
+    "status": 200,
+    "bytes": 398419,
+    "sha256": "67e0a6dfde0d57ca8d1d834b854ec9b57260b254bb2e00083790c9206ee84761"
+  },
+  {
+    "asset": "media/algorithm-arena-intro-still.png",
+    "status": 200,
+    "bytes": 140628,
+    "sha256": "04ed38a3ba718615884f4395d1e89681042f65b6a5dc728bd661da13c29fc4e3"
+  }
+]

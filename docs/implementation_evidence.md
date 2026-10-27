@@ -277,3 +277,62 @@ testing, debugging and security, with Algorithm Arena as its concrete evidence.
 Source delivery uses `feature/explore-bubble`; the deployed static build remains
 on its separate `gh-pages` branch. No application code changed in this follow-up;
 the previously recorded verification applies to the same implementation.
+
+## About-page looping GIF — 2026-10-27
+
+User requested a conspicuous, looping GIF reading "Algorithm Arena", inspired by
+[Mitko Nikov's Manim Basics in 100 Seconds](https://www.youtube.com/watch?v=rIgOfmcd1iA).
+Worked on the user's new, initially clean `feature/intro-gif` branch. Inspected
+the reference's title metadata, thumbnail, and preview storyboard. Its circular
+serif title and cyan arc informed an original Manim scene; no downloaded media
+was included in the site.
+
+Added `renderer/arena/intro.py` and `scripts/render_intro.py`. This is a dedicated
+square title GIF, separate from the 16:9 sorting explanation/custom films. It
+uses the existing CMU Serif typography and palette. The title remains visible
+while an outer cyan arc rotates continuously through a seamless full revolution.
+No changes to sorting, renderer API allowlist, or tutorial output.
+
+Reproduce:
+
+```
+PATH="$PWD/.venv-manim/bin:$PATH" .venv-manim/bin/python scripts/render_intro.py
+```
+
+Actual output: `media/algorithm-arena-intro.gif`, 720×720, 150 frames, 25 fps,
+6.00s, 398,419 bytes; GIF loop extension = 0 (infinite). Manim render 3.63s;
+render plus GIF palette conversion/still generation 19.11s. Metadata saved in
+`docs/evidence/intro-gif-metadata.json`. `algorithm-arena-intro-still.png` is the
+pause/reduced-motion fallback. The title uses verified bundled CMU Serif Italic.
+FFmpeg decoded the complete GIF with no errors.
+
+The About hero now pairs the original opening copy with the large title GIF.
+On mobile the animation appears first, inside the initial viewport. Added a
+Pause/Play control and automatic still-image selection for reduced-motion
+preferences. Static build copies both GIF and still with relative asset paths,
+so the existing GitHub Pages repository base remains supported.
+
+Checks: `npm run build`, `npm test`, `node --check web/app.js`, and
+`git diff --check` exited 0. No changes to the sorting implementation required
+another sorting-render benchmark. The frontend test runner reported one passing
+test file, containing the existing valid/invalid input assertions.
+
+Actual Chrome checks: initial desktop visibility; automatic GIF load; changing
+screen pixels; continued animation beyond the first six-second loop; pause to
+still; Play resumes GIF; reduced-motion automatically selects still; mobile
+visibility/no overflow; navigating away and back restores GIF; no runtime
+exceptions. All ten passed. Used screenshot comparisons because canvas drawImage
+samples the GIF default frame and is not a valid playback probe.
+Evidence: `intro-browser-results.json`, `intro-about-desktop.png`,
+`intro-about-mobile.png`. A source-frame comparison also confirmed frames 0 and
+25 differ in the arc region. The browser verification harness was temporary at
+`/tmp/arena-intro-reference/browser-intro.mjs`; no new test framework installed.
+
+Published the About update to the existing `gh-pages` branch in an isolated
+checkout: `1490e7863d1d607a2afb3fa13c990059fbda06d0`. Pages build status is
+`built`, with no error. Live GIF, fallback PNG, app.js, and style.css all returned
+HTTP 200 and matched the tested files byte-for-byte; see `intro-deployment.json`.
+Live page: https://syudu41.github.io/Algorithm-Arena/#/about .
+The same ten Chrome checks also passed against the live GitHub Pages URL;
+refreshed the recorded screenshots/results from that public run. Only the
+About-page GIF/layout and build asset copying changed in the frontend.

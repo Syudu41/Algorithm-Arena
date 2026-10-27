@@ -1,0 +1,17 @@
+{
+  "engine": "Manim Community Edition",
+  "scene": "AlgorithmArenaIntro",
+  "text": "Algorithm Arena",
+  "size": [
+    720,
+    720
+  ],
+  "frames": 150,
+  "loop": 0,
+  "duration_seconds": 6.0,
+  "fps": 25.0,
+  "render_seconds": 3.63,
+  "total_seconds": 19.11,
+  "bytes": 398419,
+  "file": "media/algorithm-arena-intro.gif"
+}

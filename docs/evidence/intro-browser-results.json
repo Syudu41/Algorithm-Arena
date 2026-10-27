@@ -1,0 +1,15 @@
+{
+  "results": [
+    "PASS GIF is conspicuous in initial desktop viewport",
+    "PASS real GIF loads automatically",
+    "PASS GIF animation changes browser pixels",
+    "PASS animation continues beyond first loop",
+    "PASS pause shows still image with Play control",
+    "PASS Play resumes real GIF",
+    "PASS reduced motion selects still automatically",
+    "PASS mobile GIF appears above opening copy and fits first viewport",
+    "PASS navigation back to About restores GIF",
+    "PASS no runtime exceptions"
+  ],
+  "errors": []
+}
