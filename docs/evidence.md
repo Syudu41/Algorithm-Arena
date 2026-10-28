@@ -46,3 +46,7 @@ pixels and the 24-second infinite loop. Responsive lesson regression passed
 validation passed (one test), and the production build passed. Actual desktop,
 mobile and enlarged-symbol captures were reviewed locally and remain ignored.
 This native SVG change required no Manim render; lesson timings are unchanged.
+
+GitHub Pages deployment `e20069e` completed successfully. Both served SVG files
+matched the build byte-for-byte (1,493-byte symbol and 1,231-byte favicon). The
+five symbol/motion/mobile checks also passed against the actual public website.
