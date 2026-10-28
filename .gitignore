@@ -21,3 +21,5 @@ media/*
 # Raw evidence and session archives must remain local.
 docs/evidence/
 docs/story.md
+!media/merge-tutorial.mp4
+!media/merge-poster.png

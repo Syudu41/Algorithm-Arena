@@ -14,7 +14,7 @@ import tempfile
 import time
 from pathlib import Path
 
-RENDERER_VERSION = "arena-v3-insertion"
+RENDERER_VERSION = "arena-v4-merge"
 ROOT = Path(__file__).resolve().parent.parent
 TEX_CACHE = ROOT / ".cache" / "tex"
 
@@ -31,13 +31,14 @@ def ensure_tex() -> str:
 
 
 SCENES = {"custom": "BubbleCustom", "tutorial": "BubbleTutorial",
-          "insertion_custom": "InsertionCustom", "insertion_tutorial": "InsertionTutorial"}
+          "insertion_custom": "InsertionCustom", "insertion_tutorial": "InsertionTutorial",
+          "merge_custom": "MergeCustom", "merge_tutorial": "MergeTutorial"}
 
 
 def render(scene_key: str, values: list[int] | None, out: Path) -> dict:
     from manim import tempconfig, register_font
 
-    from . import scenes, insertion_scenes
+    from . import scenes, insertion_scenes, merge_scenes
     from .visual import FONT_DIR
 
     ensure_tex()
@@ -47,9 +48,12 @@ def render(scene_key: str, values: list[int] | None, out: Path) -> dict:
         raise ValueError(f"unknown scene {scene_key!r}")
     if scene_key == "custom":
         scenes.configure(values)
-    module = insertion_scenes if scene_key.startswith("insertion_") else scenes
+    module = (merge_scenes if scene_key.startswith("merge_") else
+              insertion_scenes if scene_key.startswith("insertion_") else scenes)
     if scene_key == "insertion_custom":
         insertion_scenes.configure(values)
+    if scene_key == "merge_custom":
+        merge_scenes.configure(values)
     cls = getattr(module, SCENES[scene_key])
     out = out.resolve()
     out.parent.mkdir(parents=True, exist_ok=True)

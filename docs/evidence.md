@@ -50,3 +50,38 @@ This native SVG change required no Manim render; lesson timings are unchanged.
 GitHub Pages deployment `e20069e` completed successfully. Both served SVG files
 matched the build byte-for-byte (1,493-byte symbol and 1,231-byte favicon). The
 five symbol/motion/mobile checks also passed against the actual public website.
+
+## Merge Sort animation package
+
+The dedicated Manim specialist implemented a stable top-down trace with original
+identity-carrying split, compare and merged-placement events. The coordinator
+reviewed trace tests, source and actual decoded frames. The first midpoint review
+found moving values crossing fading comparison text; the cue was moved below the
+output tray and affected custom proofs were regenerated. Trial footage and raw
+evidence remain ignored local artifacts, with only the tutorial/poster tracked.
+
+Writes count placements into merged output runs, including drained remainders;
+copy-back bookkeeping is excluded. Both five-item proofs use 8 comparisons and
+12 writes. The six-item tutorial uses 10 comparisons and 16 writes. The ten-item
+boundary/duplicate proof uses 25 comparisons and 34 writes.
+
+| Proof | Playback | Scene render | Process wall | Bytes |
+|---|---:|---:|---:|---:|
+| custom-52413 | 18.233s | 33.60s | 34.81s | 1,283,293 |
+| custom-83726 | 18.233s | 47.60s | 48.93s | 1,287,926 |
+| tutorial | 48.100s | 82.89s | 84.04s | 2,896,782 |
+| stress-ten | 41.233s | 101.56s | 102.80s | 3,542,594 |
+
+All four outputs: H.264/yuv420p, 1280×720 at 30 fps, full FFmpeg decode exit 0.
+Actual split, two-run comparison, write midpoint, remainder, stable equal choice
+and completed-state frames were reviewed. Ten-wide rows and −99 labels fit.
+TeX/text caches were warm; these are process renders, not clean-machine cold-start
+or exact output-cache timings. Pure trace regression: **151 passed**, exit 0,
+0.35s, including 500 seeded Merge arrays and existing Bubble/Insertion tests.
+Local service unit/HTTP guards: **18 passed**, exit 0, 1.16s. The terminal agent
+Merge tutorial dry run passed. All six existing release media files retain their
+original hashes. Physical-projector and human visual review remain pending.
+
+Full renderer/service/agent regression after animation review: **197 passed**,
+exit 0, **37.58s**, including the existing genuine Bubble MP4 render/decode test.
+One existing dependency warning (`audioop` deprecation under Python 3.11).
