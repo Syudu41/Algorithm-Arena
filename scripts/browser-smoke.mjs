@@ -28,6 +28,7 @@ try{
   await until('!!document.querySelector("#tutorial")');
   await until('document.querySelector("#tutorial").readyState>=1');
   await check('packaged tutorial duration and no autoplay',()=>evaluate('Math.abs(document.querySelector("#tutorial").duration-37.5667)<1 && document.querySelector("#tutorial").paused'));
+  await evaluate('document.querySelector("#explain").scrollIntoView({block:"center"})');
   const point=await evaluate('(()=>{const r=document.querySelector("#explain").getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2}})()');
   await send('Input.dispatchMouseEvent',{type:'mousePressed',button:'left',clickCount:1,...point});
   await send('Input.dispatchMouseEvent',{type:'mouseReleased',button:'left',clickCount:1,...point});

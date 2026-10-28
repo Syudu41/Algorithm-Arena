@@ -344,3 +344,78 @@ The GIF continues looping automatically. Reduced-motion preferences still select
 the static image, including preference changes while About is open. The GIF
 asset itself is unchanged. `node --check web/app.js`, `npm run build`, `npm test`,
 and `git diff --check` passed; no animation re-render was necessary.
+
+## Professional presentation cleanup — 2026-10-28
+
+User requested returning to `main`, avoiding unnecessary branches, discussing a
+dedicated Manim agent without implementing it, and polishing the website before
+further feature work. Main was already selected and clean; fetched/pulled with
+`--ff-only`. No agent was created, no branches added, and no new algorithms or
+Manim scenes were implemented.
+
+Audit found forced line breaks on mobile, inconsistent spacing/control sizing,
+technical copy in primary product flows, a public custom-render submit action
+that appeared available despite the static hosting boundary, and a skip link
+that could replace the active hash route with `#main`.
+
+Changes:
+- Kept the existing dark palette, Computer Modern identity, original looping GIF,
+  site routes, video assets, sorting engine and local service.
+- Consolidated typography, spacing, active navigation, focus outlines, touch
+  targets and footer navigation. Added an original SVG favicon. Reorganized the
+  compressed stylesheet and page templates into readable sections.
+- Removed forced hero line breaks; balanced headings and adjusted mobile GIF size
+  while retaining its prominent, automatic display and reduced-motion fallback.
+- Simplified About copy and the sorting card; retained the actual development
+  story. Clarified the Bubble Sort title and added accurate complexity/stability
+  facts. Detailed counting and trace-storage caveats remain available inline.
+- Grouped the custom-input controls into a clear panel with explicit availability.
+  Static/public mode labels the local-demo requirement and disables the render
+  action before submission. Local mode keeps the working submission workflow.
+- Added distinct, text-labeled working/error/ready states and form busy semantics;
+  kept stale-request protection. Moved output encoding/render metadata into an
+  expandable details section, with a visible new/cache-hit label.
+- Fixed skip-link focus without changing the route, reset route cleanup ownership,
+  respected reduced-motion when scrolling to a film, and added a useful missing
+  page recovery link/title. No animation pause button was reintroduced.
+
+Verification:
+- `npm run build`, `npm test`, `node --check web/app.js`, `git diff --check`: exit 0.
+  Frontend validator assertions passed (Node reports one passing test-file suite).
+- Temporary Chrome harness `/tmp/arena-cleanup-layout.mjs`: **30 checks passed**.
+  All three pages at 320/390/768/1440px had no horizontal overflow, one h1, and
+  header navigation targets at least 44px high. Additional checks covered skip
+  link route/focus, automatic GIF/no pause control, reduced motion, public mode
+  availability before submit, missing route recovery, and runtime exceptions.
+- Existing Chrome Explore regression via `/tmp/arena-cleanup-flow.mjs`:
+  **17 checks passed**, including genuine custom Manim rendering, exact array and
+  metrics, decodable film, no result autoplay, playback/speed, invalid input,
+  cached repeat, mobile, keyboard, API unavailable, failure/timeout UI, and safe
+  stop/replace. Failure and timeout UI responses were explicitly injected; the
+  successful custom film was real. No browser runtime exceptions.
+- Updated the retained smoke harness to scroll Explain into view before sending
+  a real mouse click, so it works across viewport sizes and lesson heading heights.
+
+Custom render observed in this run: [5,2,4,1,3], sorted [1,2,3,4,5], 10
+comparisons, 7 swaps; 19.467s playback, 25.70s Manim scene render, 45.27s worker
+wall time, 966,187 bytes, H.264 1280×720/30 fps. Existing TeX cache reused.
+Tutorial remains 37.566667s and the About GIF remains a 6s infinite loop; neither
+was regenerated. This is a presentation cleanup, not a renderer optimization.
+The sorting Python suite was not rerun because no Python code changed; the real
+browser/API render served as the relevant integration regression.
+
+Evidence: `cleanup-layout-checks.json`, `cleanup-local-browser.json`, desktop/
+mobile `cleanup-about-*`, `cleanup-sorting-*`, `cleanup-bubble-*`, and local
+custom-result screenshots. Remaining limits: Chrome-only browser verification,
+no physical projector/screen-reader session or fresh human review. Public custom
+rendering remains outside scope, and the local cache still has no disk quota.
+
+Published static cleanup as existing `gh-pages` commit
+`eb527fe89847d49ab45fd4683813498e61792046`; GitHub reports `built`, no error.
+The live index, JavaScript, stylesheet, favicon and public configuration returned
+HTTP 200 and matched the tested build byte-for-byte (`cleanup-deployment.json`).
+Seven additional Chrome checks passed on the actual public site: navigation,
+video metadata/no autoplay, user-triggered playback, speed, honest public render
+availability, nested hash-route reload, and no runtime exceptions. Evidence:
+`cleanup-public-browser.json`, `cleanup-public-bubble.png`. No new source branch
+or specialist agent was created; delivery is directly on `main` as requested.
