@@ -1,0 +1,14 @@
+[
+  {
+    "asset": "app.js",
+    "status": 200,
+    "bytes": 15559,
+    "sha256": "30ac78cf41051cb6f3bc46d5b7d6846207a737b6db741f5a23b35abf22fedefa"
+  },
+  {
+    "asset": "style.css",
+    "status": 200,
+    "bytes": 14866,
+    "sha256": "326b2eaabc510d692d36e7f218bb87dd4d2a554931b67338f5ca030e21169053"
+  }
+]

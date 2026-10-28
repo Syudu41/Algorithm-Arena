@@ -23,9 +23,9 @@ const about = () => `
     <div class="about-hero-copy">
       <p class="eyebrow">A visual study of algorithms</p>
       <h1 id="about-title">What if we could see how an algorithm <em>thinks?</em></h1>
-      <p class="lede">Follow a comparison. Watch two values trade places. See why an algorithm works, one decision at a time.</p>
+      <p class="lede">Understand how algorithms work through clear, step-by-step animations.</p>
       <a class="button" href="#/sorting">Explore sorting <span aria-hidden="true">↗</span></a>
-      <p class="hero-note"><span aria-hidden="true"></span>Small steps. Clear understanding.</p>
+      <p class="hero-note"><span aria-hidden="true"></span>One decision at a time.</p>
     </div>
     <figure class="intro-art">
       <img id="about-intro" src="./media/algorithm-arena-intro.gif"
@@ -35,13 +35,12 @@ const about = () => `
   </section>
   <section class="about-grid" aria-label="About the project">
     <div>
-      <p class="eyebrow">Our approach</p><h2>Motion that explains.</h2>
-      <p>A highlighted pair asks a question. A swap shows the answer. Each value stays attached to its tile, so you can follow the reasoning from the first comparison to the final position.</p>
+      <p class="eyebrow">See each step</p><h2>Motion that explains.</h2>
+      <p>Highlights show which values are being compared. Swaps reveal how their order changes. Follow each value from the first comparison to its final position.</p>
     </div>
     <div>
-      <p class="eyebrow">Behind the project</p><h2>Built with human judgment.</h2>
-      <p>Algorithm Arena began as a case study in AI-assisted software development for MIS 7623. Coding agents assist with implementation and testing; people guide the requirements, review the work, and make the final decisions.</p>
-      <p>Original animations are rendered with Manim Community Edition.</p>
+      <p class="eyebrow">At your pace</p><h2>Take a closer look.</h2>
+      <p>Pause the video at a comparison, replay a swap, or slow the animation down. Follow each decision until the next step feels clear.</p>
     </div>
   </section>`;
 
@@ -49,19 +48,41 @@ const sorting = () => `
   <section class="page-intro">
     <p class="eyebrow">Explore / Sorting</p>
     <h1>Order, from <em>small decisions.</em></h1>
-    <p class="lede">Bring a collection into sequence. Start with a simple question: are these two neighbours in the right order?</p>
+    <p class="lede">Sorting puts values in order. Explore the comparisons and swaps behind the result.</p>
   </section>
   <section class="catalog" aria-labelledby="catalog-title">
-    <div class="catalog-heading"><h2 id="catalog-title">Start with the fundamentals.</h2><span>1 guided lesson</span></div>
+    <div class="catalog-heading"><h2 id="catalog-title">Start with the fundamentals.</h2></div>
     <a class="algorithm-card" href="#/sorting/bubble-sort">
       <div class="card-copy">
         <p class="eyebrow">Adjacent comparisons</p><h2>Bubble Sort</h2>
-        <p>Compare, swap, and repeat. Watch the largest remaining value find its place.</p>
+        <p>Follow neighbouring values as the largest remaining value moves to the end.</p>
         <ul class="card-facts" aria-label="Algorithm properties"><li>Stable</li><li>In place</li><li>O(n²) average time</li></ul>
         <span class="card-action">Explore Bubble Sort <span aria-hidden="true">↗</span></span>
       </div>
       <div class="tile-diagram" aria-hidden="true"><span>5</span><span class="pair">2</span><span class="pair">4</span><span class="done">6<small>✓</small></span></div>
     </a>
+  </section>`;
+
+const customInput = () => `
+  <section class="try-section" aria-labelledby="try-title">
+    <div class="try-intro"><p class="eyebrow">Try it yourself</p><h2 id="try-title">Try your own array.</h2><p>Follow every comparison and swap for your values.</p><p class="quiet">2–10 integers, from −99 to 99. Negatives, duplicates, and zero welcome.</p></div>
+    <div class="input-panel">
+      <p id="render-availability" class="availability"></p>
+      <form id="array-form" novalidate>
+        <label for="values">Values, separated by commas</label>
+        <input id="values" name="values" value="5,2,4,1,3" maxlength="200" autocomplete="off" spellcheck="false" aria-describedby="input-help status">
+        <p id="input-help" class="quiet">Example: 5,2,4,1,3</p>
+        <div class="form-actions"><button id="animate-submit" class="button" type="submit">Animate my array <span aria-hidden="true">↗</span></button><button id="cancel" type="button" hidden>Stop waiting</button></div>
+      </form>
+      <p id="status" role="status" aria-live="polite" aria-atomic="true"></p>
+      <p class="render-note">Five-value animations usually play for 12–30 seconds. Rendering takes additional time; playback speed only changes the viewing pace.</p>
+    </div>
+  </section>
+  <section id="result" hidden aria-labelledby="result-title">
+    <div class="section-heading"><div><p class="eyebrow">Your result</p><h2 id="result-title">Your sorted array.</h2></div><span id="cache-label" class="availability"></span></div>
+    <p id="summary"></p>
+    ${player('custom', '', 'Your custom Bubble Sort animation')}
+    <details class="render-details"><summary>Video details</summary><p id="render-meta" class="quiet"></p></details>
   </section>`;
 
 const bubble = () => `
@@ -78,37 +99,18 @@ const bubble = () => `
   </dl>
   <section class="lesson-section" aria-labelledby="learn-title">
     <div class="section-heading">
-      <div><p class="eyebrow">01 / Watch · 38 seconds</p><h2 id="learn-title">Follow the reasoning.</h2></div>
+      <div><p class="eyebrow">Watch · 38 seconds</p><h2 id="learn-title">Follow the reasoning.</h2></div>
       <button id="explain" class="button">Explain <span aria-hidden="true">▶</span></button>
     </div>
     ${player('tutorial', './media/bubble-tutorial.mp4', 'Bubble Sort explanation')}
     <ul class="legend" aria-label="Animation key"><li><i class="focus" aria-hidden="true"></i> Compare neighbours</li><li><i class="swap" aria-hidden="true"></i> Exchange positions</li><li><i class="done" aria-hidden="true"></i> ✓ Fixed in place</li></ul>
-    <details><summary>Read the explanation &amp; counting rules</summary>
+    <details><summary>How Bubble Sort works</summary>
       <div class="explanation-copy"><p>The film starts with [4, 1, 6, 2, 5, 3]. The first comparison, 4 &gt; 1, triggers a swap. The comparison 4 &lt; 6 keeps both values in place. After the first pass, 6 is fixed at the end. Each pass works on a shorter prefix. A pass with no swaps ends the algorithm early.</p>
       <p>A comparison counts one adjacent value comparison. A swap counts one exchange of two values. Already sorted input needs n − 1 comparisons and no swaps.</p>
-      <p>The sorting algorithm uses constant auxiliary space. Saving the educational animation trace requires additional storage. Equal values never swap with each other, preserving their original order.</p></div>
+      <p>The sorting algorithm needs only a fixed amount of extra space. Equal values never swap with each other, so their original order is preserved.</p></div>
     </details>
   </section>
-  <section class="try-section" aria-labelledby="try-title">
-    <div class="try-intro"><p class="eyebrow">02 / Explore</p><h2 id="try-title">Give it an array.</h2><p>Your values, with every comparison and swap shown.</p><p class="quiet">2–10 integers, from −99 to 99. Negatives, duplicates, and zero welcome.</p></div>
-    <div class="input-panel">
-      <p id="render-availability" class="availability"></p>
-      <form id="array-form" novalidate>
-        <label for="values">Values, separated by commas</label>
-        <input id="values" name="values" value="5,2,4,1,3" maxlength="200" autocomplete="off" spellcheck="false" aria-describedby="input-help status">
-        <p id="input-help" class="quiet">Example: 5,2,4,1,3</p>
-        <div class="form-actions"><button id="animate-submit" class="button" type="submit">Animate my array <span aria-hidden="true">↗</span></button><button id="cancel" type="button" hidden>Stop waiting</button></div>
-      </form>
-      <p id="status" role="status" aria-live="polite" aria-atomic="true"></p>
-      <p class="render-note">Five-value animations usually play for 12–30 seconds. Rendering takes additional time; playback speed only changes the viewing pace.</p>
-    </div>
-  </section>
-  <section id="result" hidden aria-labelledby="result-title">
-    <div class="section-heading"><div><p class="eyebrow">Your animation</p><h2 id="result-title">Every step accounted for.</h2></div><span id="cache-label" class="availability"></span></div>
-    <p id="summary"></p>
-    ${player('custom', '', 'Your custom Bubble Sort animation')}
-    <details class="render-details"><summary>Animation details</summary><p id="render-meta" class="quiet"></p></details>
-  </section>`;
+  ${typeof window.ARENA_CONFIG?.renderApi === 'string' ? customInput() : ''}`;
 
 function wireAbout() {
   const image = document.querySelector('#about-intro');
@@ -137,12 +139,14 @@ function wirePlayers() {
     notice.textContent = 'This video is unavailable. Please refresh the page and try again.';
   }));
 }
-function wireExplore() {
+function wireLesson() {
   const tutorial = document.querySelector('#tutorial');
   document.querySelector('#explain').addEventListener('click', () => {
     tutorial.scrollIntoView({ block: 'center', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
     tutorial.play().catch(() => {});
   });
+}
+function wireExplore() {
   const status = document.querySelector('#status');
   const input = document.querySelector('#values');
   const cancel = document.querySelector('#cancel');
@@ -221,7 +225,10 @@ function render() {
   const title = {'/about': 'About', '/sorting': 'Sorting', '/sorting/bubble-sort': 'Bubble Sort'}[route] || 'Page not found';
   document.title = `${title} · Algorithm Arena`;
   wirePlayers(); if (route === '/about') wireAbout();
-  if (route === '/sorting/bubble-sort') wireExplore();
+  if (route === '/sorting/bubble-sort') {
+    wireLesson();
+    if (document.querySelector('#array-form')) wireExplore();
+  }
   main.focus({preventScroll:true}); window.scrollTo(0,0);
 }
 document.querySelector('.skip').addEventListener('click', event => { event.preventDefault(); main.focus(); });

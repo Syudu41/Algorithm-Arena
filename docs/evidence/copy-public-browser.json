@@ -1,0 +1,14 @@
+{
+  "base": "https://syudu41.github.io/Algorithm-Arena",
+  "results": [
+    "PASS About copy is focused on learning",
+    "PASS About → Sorting navigation",
+    "PASS packaged tutorial duration and no autoplay",
+    "PASS Explain starts real video",
+    "PASS speed control changes video playback rate",
+    "PASS public lesson contains no unavailable form or setup copy",
+    "PASS nested hash route reload preserves tutorial",
+    "PASS no browser runtime exceptions"
+  ],
+  "errors": []
+}

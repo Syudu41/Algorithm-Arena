@@ -419,3 +419,44 @@ video metadata/no autoplay, user-triggered playback, speed, honest public render
 availability, nested hash-route reload, and no runtime exceptions. Evidence:
 `cleanup-public-browser.json`, `cleanup-public-bubble.png`. No new source branch
 or specialist agent was created; delivery is directly on `main` as requested.
+
+## Public content cleanup — 2026-10-28
+
+User requested cleaner textual content and removal of the Python/local-script
+portion from sorting. Explained the distinction between playing saved films on
+static hosting and generating new arrays. Chose the non-destructive default:
+remove the local-only form and all setup/unavailability copy from public pages,
+while retaining the existing local demo when a render API is configured. No
+backend, sorting code, media, or Python scripts were deleted.
+
+About now focuses on visual learning and playback controls, removing course,
+agent-development and renderer-edition copy from the product pages. Shortened
+sorting/lesson descriptions and labels, removed the one-lesson counter, and kept
+algorithm counting/space explanations focused on the algorithm instead of the
+application's trace storage. The development narrative remains in repository
+documentation for the lecture.
+
+Public Bubble Sort now ends with the playable tutorial, visual key and algorithm
+explanation. The custom form/result section is rendered only when renderApi is
+configured. Explanation playback is bound independently of that form. Static
+Chrome testing caught the initially shared Explain/form setup; separated the
+handlers and reran both modes successfully before deployment.
+
+`npm run build`, `npm test`, `node --check web/app.js`, `git diff --check`: exit 0.
+Updated the existing browser smoke assertions to check absence of local form/
+setup copy in static mode. Seven static browser checks and seventeen local
+Explore regression checks passed after correction. The local test uses the
+existing cached genuine MP4; no Manim media was regenerated. Tutorial playback
+remains 37.566667s; cached five-item output remains 19.467s. Source render timings
+from the prior phase remain historical, not new render-time measurements.
+
+Evidence: `copy-public-browser.json`, `copy-public-bubble.png`,
+`copy-local-browser.json`, `copy-local-result.png`, `copy-local-result-mobile.png`.
+No agent or new source branch was created. Source delivery remains on main.
+
+Published as `gh-pages` commit `b9cf1df9f5e6433aa784c0703bec4c3b04125643`;
+Pages reports built, no error. Live app.js/style.css match the tested build
+byte-for-byte (`copy-deployment.json`). Eight public-site Chrome checks passed,
+including learning-focused About copy, no local/Python setup/form content,
+working Explain/playback speed, and nested reload. Updated public results and
+screenshot were captured from the actual deployed URL.

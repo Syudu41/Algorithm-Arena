@@ -37,7 +37,7 @@ try{
   await evaluate('document.querySelector("#tutorial").pause(); document.querySelector("[data-speed=tutorial]").value="2"; document.querySelector("[data-speed=tutorial]").dispatchEvent(new Event("change"))');
   await check('speed control changes video playback rate',()=>evaluate('document.querySelector("#tutorial").playbackRate===2'));
   if (staticOnly) {
-    await check('public custom-render boundary',()=>evaluate('document.querySelector("#status").textContent.includes("static site")'));
+    await check('public lesson contains no unavailable form or setup copy',()=>evaluate('!document.querySelector("#array-form") && !/local demo|python|renderer/i.test(document.querySelector("main").textContent)'));
     await send('Page.reload');
     await until('!!document.querySelector("#tutorial")');
     await until('document.querySelector("#tutorial").readyState>=1');
@@ -96,8 +96,8 @@ try{
   await send('Fetch.disable');
   await send('Page.reload');await until('!!document.querySelector("#array-form")');
   await evaluate('window.ARENA_CONFIG.renderApi=null;location.hash="/about"');await until('!document.querySelector("#array-form")');
-  await evaluate('location.hash="/sorting/bubble-sort"');await until('!!document.querySelector("#array-form")');
-  await check('static/public mode is honest about local rendering',()=>evaluate('document.querySelector("#status").textContent.includes("static site")'));
+  await evaluate('location.hash="/sorting/bubble-sort"');await until('!!document.querySelector("#tutorial")');
+  await check('static mode preserves explanation without local-only controls',()=>evaluate('!document.querySelector("#array-form") && !!document.querySelector("#tutorial")'));
   await check('no browser runtime exceptions',async()=>errors.length===0);
   await writeFile('docs/evidence/browser-results.json',JSON.stringify({results,errors},null,2));
   }

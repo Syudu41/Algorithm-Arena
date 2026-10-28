@@ -267,3 +267,9 @@ input[aria-invalid] { border-color: var(--red); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
 }
+
+/* Leave a comfortable ending when the public lesson has no custom-input panel. */
+.lesson-section:last-child { padding-bottom: 64px; }
+@media (max-width: 760px) {
+  .lesson-section:last-child { padding-bottom: 44px; }
+}
