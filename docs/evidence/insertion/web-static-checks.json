@@ -1,0 +1,50 @@
+{
+  "heading": [
+    {
+      "familyName": "CMU Serif",
+      "postScriptName": "CMUSerif-Italic",
+      "isCustomFont": true,
+      "glyphCount": 29
+    },
+    {
+      "familyName": "CMU Serif",
+      "postScriptName": "CMUSerif-Roman",
+      "isCustomFont": true,
+      "glyphCount": 14
+    }
+  ],
+  "body": [
+    {
+      "familyName": "Liberation Sans",
+      "postScriptName": "LiberationSans",
+      "isCustomFont": false,
+      "glyphCount": 131
+    }
+  ],
+  "results": [
+    "PASS Insertion card follows Bubble Sort",
+    "PASS Insertion tutorial is a real 35–60 second film without autoplay",
+    "PASS Insertion headings use CMR and body uses Arial variant",
+    "PASS Insertion Explain plays actual media",
+    "PASS static insertion lesson has no local-only form or setup copy",
+    "PASS 1440px /about fits viewport",
+    "PASS 1440px /sorting fits viewport",
+    "PASS 1440px /sorting/bubble-sort fits viewport",
+    "PASS 1440px /sorting/insertion-sort fits viewport",
+    "PASS 768px /about fits viewport",
+    "PASS 768px /sorting fits viewport",
+    "PASS 768px /sorting/bubble-sort fits viewport",
+    "PASS 768px /sorting/insertion-sort fits viewport",
+    "PASS 390px /about fits viewport",
+    "PASS 390px /sorting fits viewport",
+    "PASS 390px /sorting/bubble-sort fits viewport",
+    "PASS 390px /sorting/insertion-sort fits viewport",
+    "PASS 320px /about fits viewport",
+    "PASS 320px /sorting fits viewport",
+    "PASS 320px /sorting/bubble-sort fits viewport",
+    "PASS 320px /sorting/insertion-sort fits viewport",
+    "PASS Insertion nested route reload preserves lesson",
+    "PASS no runtime exceptions"
+  ],
+  "errors": []
+}

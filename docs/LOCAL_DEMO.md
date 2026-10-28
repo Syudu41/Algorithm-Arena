@@ -13,7 +13,7 @@ npm run build
 PYTHONPATH=renderer .venv-manim/bin/python -m arena.service
 ```
 
-Open http://127.0.0.1:8765/#/about → Sorting → Bubble Sort. Click Explain, then
+Open http://127.0.0.1:8765/#/about → Sorting → Bubble Sort or Insertion Sort. Click Explain, then
 submit `5,2,4,1,3`. Wait for Ready and press Play. Repeat for an exact cache hit.
 `--port 8766 --timeout 300` configures the local server. Keep this service local;
 it is intentionally bound to loopback, uses same-origin POST requests, and is
@@ -32,7 +32,9 @@ export PATH="$PWD/.venv-manim/bin:$PATH"
 npm test
 npm run build
 node scripts/browser-smoke.mjs
+node scripts/insertion-smoke.mjs
 .venv-manim/bin/python scripts/verify_renders.py
+.venv-manim/bin/python scripts/render_insertion.py --benchmarks
 ```
 
 The browser smoke script needs installed Google Chrome and local socket access;
@@ -68,3 +70,23 @@ contains only static assets: public on-demand rendering is not implemented.
 See [GitHub's Pages API documentation](https://docs.github.com/en/rest/pages/pages)
 for the branch publishing configuration. Deployment status and actual URL checks
 are recorded in `implementation_evidence.md`.
+
+
+## Insertion Sort
+
+Insertion Sort appears immediately below Bubble Sort in the catalog and at
+`#/sorting/insertion-sort`. Public pages play the bundled explanation without
+local-only controls; the local server enables its custom-array form. For
+[5,2,4,1,3], Insertion reports9 comparisons,7 shifts and4 key placements. Bubble
+reports10 comparisons and7 swaps. These operations are defined in each lesson;
+a shift or key placement is not reported as a swap. The cache includes the
+algorithm as well as normalized values and renderer fingerprint.
+
+To check a static build/site with the retained Insertion browser harness:
+
+```sh
+ARENA_URL=https://syudu41.github.io/Algorithm-Arena ARENA_STATIC_ONLY=1 node scripts/insertion-smoke.mjs
+```
+
+The reusable `Manim-agent` developer command and its optional parameters are
+explained in README. This is a development helper, not an AI service in the site.

@@ -1,10 +1,10 @@
 import { parseValues } from './validation.js';
 const main = document.querySelector('main');
 let cleanup = () => {};
-const player = (id, src, title) => `
+const player = (id, src, title, poster = id === 'tutorial' ? './media/bubble-poster.png' : null) => `
   <div class="player">
     <video id="${id}" controls preload="metadata" playsinline
-      ${id === 'tutorial' ? 'poster="./media/bubble-poster.png"' : ''}
+      ${poster ? `poster="${poster}"` : ''}
       aria-label="${title}" ${src ? `src="${src}"` : ''}></video>
     <div class="player-tools">
       <span>Visual explanation · no audio</span>
@@ -48,11 +48,11 @@ const sorting = () => `
   <section class="page-intro">
     <p class="eyebrow">Explore / Sorting</p>
     <h1>Order, from <em>small decisions.</em></h1>
-    <p class="lede">Sorting puts values in order. Explore the comparisons and swaps behind the result.</p>
+    <p class="lede">Sorting puts values in order. Follow the comparisons that guide each step.</p>
   </section>
   <section class="catalog" aria-labelledby="catalog-title">
     <div class="catalog-heading"><h2 id="catalog-title">Start with the fundamentals.</h2></div>
-    <a class="algorithm-card" href="#/sorting/bubble-sort">
+    <a class="algorithm-card" data-algorithm="bubble" href="#/sorting/bubble-sort">
       <div class="card-copy">
         <p class="eyebrow">Adjacent comparisons</p><h2>Bubble Sort</h2>
         <p>Follow neighbouring values as the largest remaining value moves to the end.</p>
@@ -61,9 +61,18 @@ const sorting = () => `
       </div>
       <div class="tile-diagram" aria-hidden="true"><span>5</span><span class="pair">2</span><span class="pair">4</span><span class="done">6<small>✓</small></span></div>
     </a>
+    <a class="algorithm-card" data-algorithm="insertion" href="#/sorting/insertion-sort">
+      <div class="card-copy">
+        <p class="eyebrow">An ordered prefix</p><h2>Insertion Sort</h2>
+        <p>Take the next value, make room, and place it in order. Grow a sorted prefix one value at a time.</p>
+        <ul class="card-facts" aria-label="Algorithm properties"><li>Stable</li><li>In place</li><li>O(n²) average time</li></ul>
+        <span class="card-action">Explore Insertion Sort <span aria-hidden="true">↗</span></span>
+      </div>
+      <div class="tile-diagram insertion-diagram" aria-hidden="true"><span class="ordered">2</span><span class="ordered">4</span><span class="ordered">5</span><span class="key">1</span></div>
+    </a>
   </section>`;
 
-const customInput = () => `
+const customInput = (name = 'Bubble Sort') => `
   <section class="try-section" aria-labelledby="try-title">
     <div class="try-intro"><p class="eyebrow">Try it yourself</p><h2 id="try-title">Try your own array.</h2><p>Follow every comparison and swap for your values.</p><p class="quiet">2–10 integers, from −99 to 99. Negatives, duplicates, and zero welcome.</p></div>
     <div class="input-panel">
@@ -81,7 +90,7 @@ const customInput = () => `
   <section id="result" hidden aria-labelledby="result-title">
     <div class="section-heading"><div><p class="eyebrow">Your result</p><h2 id="result-title">Your sorted array.</h2></div><span id="cache-label" class="availability"></span></div>
     <p id="summary"></p>
-    ${player('custom', '', 'Your custom Bubble Sort animation')}
+    ${player('custom', '', `Your custom ${name} animation`)}
     <details class="render-details"><summary>Video details</summary><p id="render-meta" class="quiet"></p></details>
   </section>`;
 
@@ -111,6 +120,33 @@ const bubble = () => `
     </details>
   </section>
   ${typeof window.ARENA_CONFIG?.renderApi === 'string' ? customInput() : ''}`;
+
+const insertion = () => `
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="#/sorting">Sorting</a><span aria-hidden="true">/</span><span aria-current="page">Insertion Sort</span></nav>
+  <section class="detail-heading">
+    <div><p class="eyebrow">Sorting / Insertion Sort</p><h1>Insertion Sort<span>Make room for the next value.</span></h1></div>
+    <p class="lede">Take the next value, shift larger values to the right, and place it in the gap. Repeat to grow an ordered prefix, one value at a time.</p>
+  </section>
+  <dl class="complexity-strip" aria-label="Algorithm complexity">
+    <div><dt>Average &amp; worst time</dt><dd>O(n²)</dd></div>
+    <div><dt>Already sorted</dt><dd>O(n)</dd></div>
+    <div><dt>Sorting space</dt><dd>O(1)</dd></div>
+    <div><dt>Equal values</dt><dd>Order preserved</dd></div>
+  </dl>
+  <section class="lesson-section" aria-labelledby="learn-title">
+    <div class="section-heading">
+      <div><p class="eyebrow">Watch · 41 seconds</p><h2 id="learn-title">Find the key’s place.</h2></div>
+      <button id="explain" class="button">Explain <span aria-hidden="true">▶</span></button>
+    </div>
+    ${player('tutorial', './media/insertion-tutorial.mp4', 'Insertion Sort explanation', './media/insertion-poster.png')}
+    <ul class="legend" aria-label="Animation key"><li><i class="focus" aria-hidden="true"></i> Compare with the key</li><li><i class="swap" aria-hidden="true"></i> Shift right</li><li><i class="prefix" aria-hidden="true"></i> Ordered prefix</li></ul>
+    <details><summary>How Insertion Sort works</summary>
+      <div class="explanation-copy"><p>The values before the key are already in order. Larger values shift one position right to make a gap for the key. The ordered prefix grows after each insertion, though its values may move again on later steps.</p>
+      <p>A comparison counts one value-to-key comparison. A shift moves one value one position right. A key placement puts the key back into the array, even when its position stays the same.</p>
+      <p>Already sorted input needs n − 1 comparisons and no shifts. Equal values are never shifted past one another, preserving their original order. The sorting algorithm uses a fixed amount of extra space.</p></div>
+    </details>
+  </section>
+  ${typeof window.ARENA_CONFIG?.renderApi === 'string' ? customInput('Insertion Sort') : ''}`;
 
 function wireAbout() {
   const image = document.querySelector('#about-intro');
@@ -146,7 +182,7 @@ function wireLesson() {
     tutorial.play().catch(() => {});
   });
 }
-function wireExplore() {
+function wireExplore(algorithm = 'bubble') {
   const status = document.querySelector('#status');
   const input = document.querySelector('#values');
   const cancel = document.querySelector('#cancel');
@@ -184,7 +220,7 @@ function wireExplore() {
     };
     try {
       setStatus(`Submitting [${values.join(', ')}]…`, 'working');
-      let job = await request('/api/renders', {method:'POST', headers:{'Content-Type':'application/json'},body:JSON.stringify({algorithm:'bubble',values})});
+      let job = await request('/api/renders', {method:'POST', headers:{'Content-Type':'application/json'},body:JSON.stringify({algorithm,values})});
       const started = Date.now();
       while (current === generation && (job.status === 'queued' || job.status === 'rendering')) {
         setStatus(`${job.status === 'queued' ? 'Queued' : 'Rendering'}: [${values.join(', ')}]. This may take a minute or more.`, 'working');
@@ -198,8 +234,9 @@ function wireExplore() {
       }
       if (current !== generation) return;
       if (job.status !== 'ready') throw new Error(job.error || `Render ${job.status}`);
-      if (JSON.stringify(job.initial) !== JSON.stringify(values) || !/^\/api\/videos\/[a-f0-9]{32}\.mp4$/.test(job.video_url)) throw new Error('The server returned a mismatched render. Please retry.');
-      document.querySelector('#summary').textContent = `Input [${job.initial.join(', ')}] → Sorted [${job.final.join(', ')}] · ${job.comparisons} comparisons · ${job.swaps} swaps`;
+      if (job.algorithm !== algorithm || JSON.stringify(job.initial) !== JSON.stringify(values) || !/^\/api\/videos\/[a-f0-9]{32}\.mp4$/.test(job.video_url)) throw new Error('The server returned a mismatched render. Please retry.');
+      const operations = algorithm === 'insertion' ? `${job.shifts} shifts · ${job.placements} key placements` : `${job.swaps} swaps`;
+      document.querySelector('#summary').textContent = `Input [${job.initial.join(', ')}] → Sorted [${job.final.join(', ')}] · ${job.comparisons} comparisons · ${operations}`;
       document.querySelector('#custom').src = api + job.video_url;
       document.querySelector('#render-meta').textContent = `${job.duration_seconds} s playback · ${job.wall_seconds} s original render wall time · ${(job.bytes/1e6).toFixed(2)} MB · ${job.width}×${job.height} / ${job.fps} fps · ${job.cached ? 'Exact input cache hit' : 'New Manim render'}`;
       document.querySelector('#cache-label').textContent = job.cached ? 'Exact input cache hit' : 'New animation';
@@ -216,18 +253,18 @@ function render() {
   cleanup = () => {};
   document.querySelectorAll('video').forEach(v => v.pause());
   const route = location.hash.slice(1) || '/about';
-  const pages = {'/about':about, '/sorting':sorting, '/sorting/bubble-sort':bubble};
+  const pages = {'/about':about, '/sorting':sorting, '/sorting/bubble-sort':bubble, '/sorting/insertion-sort':insertion};
   main.innerHTML = (pages[route] || (() => '<section class="page-intro"><p class="eyebrow">Page not found</p><h1>Let’s find your next step.</h1><p class="lede">This page isn’t available. Explore our sorting lesson to continue.</p><a class="button" href="#/sorting">Explore sorting <span aria-hidden="true">↗</span></a></section>'))();
   document.querySelectorAll('header nav a').forEach(a => {
     const active = route === a.hash.slice(1) || (a.hash === '#/sorting' && route.startsWith('/sorting/'));
     if (active) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
   });
-  const title = {'/about': 'About', '/sorting': 'Sorting', '/sorting/bubble-sort': 'Bubble Sort'}[route] || 'Page not found';
+  const title = {'/about': 'About', '/sorting': 'Sorting', '/sorting/bubble-sort': 'Bubble Sort', '/sorting/insertion-sort': 'Insertion Sort'}[route] || 'Page not found';
   document.title = `${title} · Algorithm Arena`;
   wirePlayers(); if (route === '/about') wireAbout();
-  if (route === '/sorting/bubble-sort') {
+  if (route === '/sorting/bubble-sort' || route === '/sorting/insertion-sort') {
     wireLesson();
-    if (document.querySelector('#array-form')) wireExplore();
+    if (document.querySelector('#array-form')) wireExplore(route.endsWith('insertion-sort') ? 'insertion' : 'bubble');
   }
   main.focus({preventScroll:true}); window.scrollTo(0,0);
 }

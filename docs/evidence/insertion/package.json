@@ -1,0 +1,127 @@
+{
+  "algorithm": "insertion",
+  "renderer_version": "arena-v3-insertion",
+  "scene_keys": {
+    "custom": "insertion_custom",
+    "tutorial": "insertion_tutorial"
+  },
+  "metric_definitions": {
+    "comparisons": "prefix-value versus key comparisons; excludes index boundary checks",
+    "shifts": "one existing value moved one slot right",
+    "placements": "one key reinsertion per outer iteration, n-1"
+  },
+  "assets": [
+    {
+      "name": "custom-52413",
+      "values": [
+        5,
+        2,
+        4,
+        1,
+        3
+      ],
+      "render_seconds": 23.58,
+      "wall_seconds": 24.67,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1280,
+            "height": 720,
+            "pix_fmt": "yuv420p",
+            "r_frame_rate": "30/1"
+          }
+        ],
+        "format": {
+          "duration": "20.900000",
+          "size": "1164093"
+        }
+      },
+      "decode": "PASS"
+    },
+    {
+      "name": "custom-83726",
+      "values": [
+        8,
+        3,
+        7,
+        2,
+        6
+      ],
+      "render_seconds": 29.54,
+      "wall_seconds": 30.73,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1280,
+            "height": 720,
+            "pix_fmt": "yuv420p",
+            "r_frame_rate": "30/1"
+          }
+        ],
+        "format": {
+          "duration": "20.900000",
+          "size": "1182036"
+        }
+      },
+      "decode": "PASS"
+    },
+    {
+      "name": "tutorial",
+      "values": [
+        4,
+        1,
+        6,
+        2,
+        5,
+        3
+      ],
+      "render_seconds": 70.36,
+      "wall_seconds": 72.03,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1280,
+            "height": 720,
+            "pix_fmt": "yuv420p",
+            "r_frame_rate": "30/1"
+          }
+        ],
+        "format": {
+          "duration": "41.166667",
+          "size": "2431091"
+        }
+      },
+      "decode": "PASS"
+    }
+  ],
+  "paths": {
+    "tutorial": "media/insertion-tutorial.mp4",
+    "poster": "media/insertion-poster.png",
+    "custom_proofs": [
+      "media/insertion-custom-52413.mp4",
+      "media/insertion-custom-83726.mp4"
+    ],
+    "failed_prototype": "renderer/renders/insertion/custom1.mp4"
+  },
+  "visual_review": "PASS for release assets; prototype explicitly FAIL",
+  "regression": {
+    "command": "PATH=\"$PWD/.venv-manim/bin:$PATH\" .venv-manim/bin/python -m pytest renderer/tests -q",
+    "passed": 163,
+    "seconds": 30.48,
+    "exit_code": 0
+  },
+  "limitations": [
+    "Agent review, not human sign-off",
+    "Warm TeX/text cache, not clean installation benchmark",
+    "No public renderer deployment"
+  ]
+}

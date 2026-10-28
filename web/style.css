@@ -275,3 +275,8 @@ input[aria-invalid] { border-color: var(--red); }
 @media (max-width: 760px) {
   .lesson-section:last-child { padding-bottom: 44px; }
 }
+
+.algorithm-card + .algorithm-card { margin-top: 24px; }
+.insertion-diagram .ordered { border-color: var(--blue); background: #14243a; }
+.insertion-diagram .key { border-color: #fc6255; transform: translateY(-12px); }
+.legend .prefix { color: var(--blue); }

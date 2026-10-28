@@ -14,7 +14,7 @@ import tempfile
 import time
 from pathlib import Path
 
-RENDERER_VERSION = "bubble-v2-tex"
+RENDERER_VERSION = "arena-v3-insertion"
 ROOT = Path(__file__).resolve().parent.parent
 TEX_CACHE = ROOT / ".cache" / "tex"
 
@@ -30,13 +30,14 @@ def ensure_tex() -> str:
     return shutil.which("latex")
 
 
-SCENES = {"custom": "BubbleCustom", "tutorial": "BubbleTutorial"}
+SCENES = {"custom": "BubbleCustom", "tutorial": "BubbleTutorial",
+          "insertion_custom": "InsertionCustom", "insertion_tutorial": "InsertionTutorial"}
 
 
 def render(scene_key: str, values: list[int] | None, out: Path) -> dict:
     from manim import tempconfig, register_font
 
-    from . import scenes
+    from . import scenes, insertion_scenes
     from .visual import FONT_DIR
 
     ensure_tex()
@@ -46,7 +47,10 @@ def render(scene_key: str, values: list[int] | None, out: Path) -> dict:
         raise ValueError(f"unknown scene {scene_key!r}")
     if scene_key == "custom":
         scenes.configure(values)
-    cls = getattr(scenes, SCENES[scene_key])
+    module = insertion_scenes if scene_key.startswith("insertion_") else scenes
+    if scene_key == "insertion_custom":
+        insertion_scenes.configure(values)
+    cls = getattr(module, SCENES[scene_key])
     out = out.resolve()
     out.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix="arena-") as media:
@@ -63,6 +67,7 @@ def render(scene_key: str, values: list[int] | None, out: Path) -> dict:
                 register_font(str(FONT_DIR / "cmunbx.ttf")), tempconfig(opts):
             scene = cls()
             scene.render()
+            timeline = getattr(getattr(scene, "stage", None), "history", None)
             produced = Path(scene.renderer.file_writer.movie_file_path)
         elapsed = time.perf_counter() - t0
         tmp = out.with_suffix(".part.mp4")
@@ -71,7 +76,8 @@ def render(scene_key: str, values: list[int] | None, out: Path) -> dict:
         shutil.copyfile(produced, tmp)
         tmp.replace(out)  # atomic: a reader never sees a half-written file
     return {"scene": scene_key, "values": values, "render_seconds": round(elapsed, 2),
-            "renderer_version": RENDERER_VERSION, "path": str(out)}
+            "renderer_version": RENDERER_VERSION, "path": str(out),
+            **({"timeline": timeline} if timeline is not None else {})}
 
 
 def main(argv: list[str]) -> int:

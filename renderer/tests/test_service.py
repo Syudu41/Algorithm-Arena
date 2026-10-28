@@ -58,9 +58,9 @@ def test_persistent_cache_and_normalization(tmp_path):
     jobs = RenderJobs(tmp_path)
     import hashlib
     values = [2,1]
-    ident = hashlib.sha256(json.dumps([FINGERPRINT, values]).encode()).hexdigest()[:32]
+    ident = hashlib.sha256(json.dumps([FINGERPRINT, 'bubble', values]).encode()).hexdigest()[:32]
     (tmp_path / f'{ident}.json').write_text(json.dumps({'id':ident,'status':'ready',
-        'initial':values,'fingerprint':FINGERPRINT}))
+        'initial':values,'fingerprint':FINGERPRINT,'algorithm':'bubble'}))
     (tmp_path / f'{ident}.mp4').write_bytes(b'fixture')
     assert jobs.submit({'algorithm':'bubble','values':values})['cached'] is True
     assert jobs.get('../../etc/passwd') is None
@@ -100,3 +100,28 @@ def test_http_bounds_origin_paths_and_video_ranges(tmp_path):
         server.shutdown()
         server.server_close()
         thread.join()
+
+
+def test_algorithms_cannot_share_cache_for_same_values(tmp_path, monkeypatch):
+    jobs = RenderJobs(tmp_path, capacity=2)
+    monkeypatch.setattr(jobs, '_command', lambda *_: [sys.executable,'-c','raise SystemExit(1)'])
+    bubble = jobs.submit({'algorithm':'bubble','values':[5,2,4,1,3]})
+    insertion = jobs.submit({'algorithm':'insertion','values':[5,2,4,1,3]})
+    assert bubble['id'] != insertion['id']
+    assert bubble['swaps'] == 7 and 'shifts' not in bubble
+    assert insertion['shifts'] == 7 and insertion['placements'] == 4 and 'swaps' not in insertion
+    assert insertion['comparisons'] == 9
+    assert wait_for(jobs,bubble['id'])['status'] == 'failed'
+    assert wait_for(jobs,insertion['id'])['status'] == 'failed'
+
+
+def test_insertion_uses_fixed_trusted_worker_scene(tmp_path, monkeypatch):
+    jobs = RenderJobs(tmp_path)
+    seen=[]
+    def command(job, video):
+        seen.append(json.loads(job.read_text()))
+        return [sys.executable,'-c','raise SystemExit(1)']
+    monkeypatch.setattr(jobs, '_command', command)
+    job=jobs.submit({'algorithm':'insertion','values':[-99,0,99]})
+    assert wait_for(jobs,job['id'])['status'] == 'failed'
+    assert seen == [{'scene':'insertion_custom','values':[-99,0,99]}]

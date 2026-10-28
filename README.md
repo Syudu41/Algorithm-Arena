@@ -9,15 +9,15 @@ Algorithm Arena is a sorting-algorithm learning site. Its explanatory and custom
 
 ## Scope
 
-- **Now — Explore (Bubble Sort):** About → Sorting → Bubble Sort pages, a pre-rendered Manim explainer video, and a custom-array form that renders a new Manim video for your exact values.
-- **Next:** Race (two algorithms on the same input), Insertion Sort, maybe Merge Sort.
+- **Now — Explore:** About → Sorting → Bubble Sort and Insertion Sort lessons, pre-rendered Manim explanations, and local-demo forms that render exact custom arrays. The public static site hides local-only controls.
+- **Later:** Race (two algorithms on the same input) and additional algorithms; neither is part of this update.
 - **Excluded:** chatbots and AI explanations, user accounts, databases, arbitrary code execution, Challenge mode.
 
 ## Architecture
 
 ```text
 GitHub Pages (static)            Local Python service (lecture demo)
-  About · Sorting · Bubble Sort  →  validate input → Bubble Sort trace
+  About · Sorting · lessons      →  validate input → algorithm trace
   bundled explainer MP4              → fixed trusted Manim scene → cached MP4
 ```
 
@@ -26,8 +26,8 @@ GitHub Pages (static)            Local Python service (lecture demo)
 
 ## Visual contract (summary)
 
-- Dark canvas, a small luminous palette, and **Computer Modern** typography throughout
-- The pair being compared is highlighted, swaps are physical arcing moves, and the sorted part of the array is marked as each pass finishes
+- Dark canvas, a small luminous palette, and **Computer Modern** typography inside Manim; CMR website headings with Arial-compatible running text
+- Decisions are highlighted and values move physically: Bubble swaps and fixes a suffix; Insertion holds a key, shifts values, and grows an ordered prefix
 - The explainer and custom videos share one scene grammar, driven by the same trace events
 - Output is 1280×720 at 30 fps H.264. The explainer runs 35–60 s; a typical 5-item custom render runs 12–30 s
 

@@ -1,0 +1,2008 @@
+[
+  {
+    "scene": "insertion_custom",
+    "values": [
+      5,
+      2,
+      4,
+      1,
+      3
+    ],
+    "render_seconds": 23.58,
+    "renderer_version": "arena-v3-insertion",
+    "path": "/home/lab335a/Sudarshan/Random-Papers-Projects/Algorithm-Arena/media/insertion-custom-52413.mp4",
+    "timeline": [
+      {
+        "event": "SelectKey",
+        "start": 2.8,
+        "end": 3.4
+      },
+      {
+        "event": "Compare",
+        "start": 3.4,
+        "end": 3.933
+      },
+      {
+        "event": "Shift",
+        "start": 3.933,
+        "end": 4.567
+      },
+      {
+        "event": "InsertKey",
+        "start": 4.567,
+        "end": 5.2
+      },
+      {
+        "event": "PassComplete",
+        "start": 5.2,
+        "end": 5.667
+      },
+      {
+        "event": "SelectKey",
+        "start": 5.667,
+        "end": 6.267
+      },
+      {
+        "event": "Compare",
+        "start": 6.267,
+        "end": 6.8
+      },
+      {
+        "event": "Shift",
+        "start": 6.8,
+        "end": 7.433
+      },
+      {
+        "event": "Compare",
+        "start": 7.433,
+        "end": 8.1
+      },
+      {
+        "event": "InsertKey",
+        "start": 8.1,
+        "end": 8.733
+      },
+      {
+        "event": "PassComplete",
+        "start": 8.733,
+        "end": 9.2
+      },
+      {
+        "event": "SelectKey",
+        "start": 9.2,
+        "end": 9.8
+      },
+      {
+        "event": "Compare",
+        "start": 9.8,
+        "end": 10.333
+      },
+      {
+        "event": "Shift",
+        "start": 10.333,
+        "end": 10.967
+      },
+      {
+        "event": "Compare",
+        "start": 10.967,
+        "end": 11.5
+      },
+      {
+        "event": "Shift",
+        "start": 11.5,
+        "end": 12.133
+      },
+      {
+        "event": "Compare",
+        "start": 12.133,
+        "end": 12.667
+      },
+      {
+        "event": "Shift",
+        "start": 12.667,
+        "end": 13.3
+      },
+      {
+        "event": "InsertKey",
+        "start": 13.3,
+        "end": 13.933
+      },
+      {
+        "event": "PassComplete",
+        "start": 13.933,
+        "end": 14.4
+      },
+      {
+        "event": "SelectKey",
+        "start": 14.4,
+        "end": 15.0
+      },
+      {
+        "event": "Compare",
+        "start": 15.0,
+        "end": 15.533
+      },
+      {
+        "event": "Shift",
+        "start": 15.533,
+        "end": 16.167
+      },
+      {
+        "event": "Compare",
+        "start": 16.167,
+        "end": 16.7
+      },
+      {
+        "event": "Shift",
+        "start": 16.7,
+        "end": 17.333
+      },
+      {
+        "event": "Compare",
+        "start": 17.333,
+        "end": 18.0
+      },
+      {
+        "event": "InsertKey",
+        "start": 18.0,
+        "end": 18.633
+      },
+      {
+        "event": "PassComplete",
+        "start": 18.633,
+        "end": 19.1
+      },
+      {
+        "event": "Complete",
+        "start": 19.1,
+        "end": 20.9
+      }
+    ],
+    "wall_seconds": 24.67,
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "pix_fmt": "yuv420p",
+          "r_frame_rate": "30/1"
+        }
+      ],
+      "format": {
+        "duration": "20.900000",
+        "size": "1164093"
+      }
+    },
+    "name": "custom-52413",
+    "decode": "PASS"
+  },
+  {
+    "scene": "insertion_custom",
+    "values": [
+      8,
+      3,
+      7,
+      2,
+      6
+    ],
+    "render_seconds": 29.54,
+    "renderer_version": "arena-v3-insertion",
+    "path": "/home/lab335a/Sudarshan/Random-Papers-Projects/Algorithm-Arena/media/insertion-custom-83726.mp4",
+    "timeline": [
+      {
+        "event": "SelectKey",
+        "start": 2.8,
+        "end": 3.4
+      },
+      {
+        "event": "Compare",
+        "start": 3.4,
+        "end": 3.933
+      },
+      {
+        "event": "Shift",
+        "start": 3.933,
+        "end": 4.567
+      },
+      {
+        "event": "InsertKey",
+        "start": 4.567,
+        "end": 5.2
+      },
+      {
+        "event": "PassComplete",
+        "start": 5.2,
+        "end": 5.667
+      },
+      {
+        "event": "SelectKey",
+        "start": 5.667,
+        "end": 6.267
+      },
+      {
+        "event": "Compare",
+        "start": 6.267,
+        "end": 6.8
+      },
+      {
+        "event": "Shift",
+        "start": 6.8,
+        "end": 7.433
+      },
+      {
+        "event": "Compare",
+        "start": 7.433,
+        "end": 8.1
+      },
+      {
+        "event": "InsertKey",
+        "start": 8.1,
+        "end": 8.733
+      },
+      {
+        "event": "PassComplete",
+        "start": 8.733,
+        "end": 9.2
+      },
+      {
+        "event": "SelectKey",
+        "start": 9.2,
+        "end": 9.8
+      },
+      {
+        "event": "Compare",
+        "start": 9.8,
+        "end": 10.333
+      },
+      {
+        "event": "Shift",
+        "start": 10.333,
+        "end": 10.967
+      },
+      {
+        "event": "Compare",
+        "start": 10.967,
+        "end": 11.5
+      },
+      {
+        "event": "Shift",
+        "start": 11.5,
+        "end": 12.133
+      },
+      {
+        "event": "Compare",
+        "start": 12.133,
+        "end": 12.667
+      },
+      {
+        "event": "Shift",
+        "start": 12.667,
+        "end": 13.3
+      },
+      {
+        "event": "InsertKey",
+        "start": 13.3,
+        "end": 13.933
+      },
+      {
+        "event": "PassComplete",
+        "start": 13.933,
+        "end": 14.4
+      },
+      {
+        "event": "SelectKey",
+        "start": 14.4,
+        "end": 15.0
+      },
+      {
+        "event": "Compare",
+        "start": 15.0,
+        "end": 15.533
+      },
+      {
+        "event": "Shift",
+        "start": 15.533,
+        "end": 16.167
+      },
+      {
+        "event": "Compare",
+        "start": 16.167,
+        "end": 16.7
+      },
+      {
+        "event": "Shift",
+        "start": 16.7,
+        "end": 17.333
+      },
+      {
+        "event": "Compare",
+        "start": 17.333,
+        "end": 18.0
+      },
+      {
+        "event": "InsertKey",
+        "start": 18.0,
+        "end": 18.633
+      },
+      {
+        "event": "PassComplete",
+        "start": 18.633,
+        "end": 19.1
+      },
+      {
+        "event": "Complete",
+        "start": 19.1,
+        "end": 20.9
+      }
+    ],
+    "wall_seconds": 30.73,
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "pix_fmt": "yuv420p",
+          "r_frame_rate": "30/1"
+        }
+      ],
+      "format": {
+        "duration": "20.900000",
+        "size": "1182036"
+      }
+    },
+    "name": "custom-83726",
+    "decode": "PASS"
+  },
+  {
+    "scene": "insertion_tutorial",
+    "values": [
+      4,
+      1,
+      6,
+      2,
+      5,
+      3
+    ],
+    "render_seconds": 70.36,
+    "renderer_version": "arena-v3-insertion",
+    "path": "/home/lab335a/Sudarshan/Random-Papers-Projects/Algorithm-Arena/media/insertion-tutorial.mp4",
+    "timeline": [
+      {
+        "event": "SelectKey",
+        "start": 5.933,
+        "end": 6.567
+      },
+      {
+        "event": "Compare",
+        "start": 6.567,
+        "end": 7.233
+      },
+      {
+        "event": "Shift",
+        "start": 8.5,
+        "end": 9.233
+      },
+      {
+        "event": "InsertKey",
+        "start": 9.233,
+        "end": 9.933
+      },
+      {
+        "event": "PassComplete",
+        "start": 11.4,
+        "end": 12.0
+      },
+      {
+        "event": "SelectKey",
+        "start": 12.0,
+        "end": 12.633
+      },
+      {
+        "event": "Compare",
+        "start": 13.9,
+        "end": 14.7
+      },
+      {
+        "event": "InsertKey",
+        "start": 14.7,
+        "end": 15.4
+      },
+      {
+        "event": "PassComplete",
+        "start": 15.4,
+        "end": 16.0
+      },
+      {
+        "event": "SelectKey",
+        "start": 17.267,
+        "end": 17.9
+      },
+      {
+        "event": "Compare",
+        "start": 17.9,
+        "end": 18.567
+      },
+      {
+        "event": "Shift",
+        "start": 18.567,
+        "end": 19.3
+      },
+      {
+        "event": "Compare",
+        "start": 19.3,
+        "end": 19.967
+      },
+      {
+        "event": "Shift",
+        "start": 19.967,
+        "end": 20.7
+      },
+      {
+        "event": "Compare",
+        "start": 20.7,
+        "end": 21.5
+      },
+      {
+        "event": "InsertKey",
+        "start": 21.5,
+        "end": 22.2
+      },
+      {
+        "event": "PassComplete",
+        "start": 22.2,
+        "end": 22.8
+      },
+      {
+        "event": "SelectKey",
+        "start": 22.8,
+        "end": 23.433
+      },
+      {
+        "event": "Compare",
+        "start": 23.433,
+        "end": 24.1
+      },
+      {
+        "event": "Shift",
+        "start": 24.1,
+        "end": 24.833
+      },
+      {
+        "event": "Compare",
+        "start": 24.833,
+        "end": 25.633
+      },
+      {
+        "event": "InsertKey",
+        "start": 25.633,
+        "end": 26.333
+      },
+      {
+        "event": "PassComplete",
+        "start": 26.333,
+        "end": 26.933
+      },
+      {
+        "event": "SelectKey",
+        "start": 26.933,
+        "end": 27.567
+      },
+      {
+        "event": "Compare",
+        "start": 27.567,
+        "end": 28.233
+      },
+      {
+        "event": "Shift",
+        "start": 28.233,
+        "end": 28.967
+      },
+      {
+        "event": "Compare",
+        "start": 28.967,
+        "end": 29.633
+      },
+      {
+        "event": "Shift",
+        "start": 29.633,
+        "end": 30.367
+      },
+      {
+        "event": "Compare",
+        "start": 30.367,
+        "end": 31.033
+      },
+      {
+        "event": "Shift",
+        "start": 31.033,
+        "end": 31.767
+      },
+      {
+        "event": "Compare",
+        "start": 31.767,
+        "end": 32.567
+      },
+      {
+        "event": "InsertKey",
+        "start": 32.567,
+        "end": 33.267
+      },
+      {
+        "event": "PassComplete",
+        "start": 33.267,
+        "end": 33.867
+      },
+      {
+        "event": "Complete",
+        "start": 33.867,
+        "end": 35.667
+      }
+    ],
+    "wall_seconds": 72.03,
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "pix_fmt": "yuv420p",
+          "r_frame_rate": "30/1"
+        }
+      ],
+      "format": {
+        "duration": "41.166667",
+        "size": "2431091"
+      }
+    },
+    "name": "tutorial",
+    "decode": "PASS"
+  },
+  {
+    "scene": "insertion_custom",
+    "values": [
+      5,
+      2,
+      4,
+      1,
+      3
+    ],
+    "render_seconds": 31.42,
+    "renderer_version": "arena-v3-insertion",
+    "path": "/home/lab335a/Sudarshan/Random-Papers-Projects/Algorithm-Arena/renderer/renders/insertion/custom-52413-warm.mp4",
+    "timeline": [
+      {
+        "event": "SelectKey",
+        "start": 2.8,
+        "end": 3.4
+      },
+      {
+        "event": "Compare",
+        "start": 3.4,
+        "end": 3.933
+      },
+      {
+        "event": "Shift",
+        "start": 3.933,
+        "end": 4.567
+      },
+      {
+        "event": "InsertKey",
+        "start": 4.567,
+        "end": 5.2
+      },
+      {
+        "event": "PassComplete",
+        "start": 5.2,
+        "end": 5.667
+      },
+      {
+        "event": "SelectKey",
+        "start": 5.667,
+        "end": 6.267
+      },
+      {
+        "event": "Compare",
+        "start": 6.267,
+        "end": 6.8
+      },
+      {
+        "event": "Shift",
+        "start": 6.8,
+        "end": 7.433
+      },
+      {
+        "event": "Compare",
+        "start": 7.433,
+        "end": 8.1
+      },
+      {
+        "event": "InsertKey",
+        "start": 8.1,
+        "end": 8.733
+      },
+      {
+        "event": "PassComplete",
+        "start": 8.733,
+        "end": 9.2
+      },
+      {
+        "event": "SelectKey",
+        "start": 9.2,
+        "end": 9.8
+      },
+      {
+        "event": "Compare",
+        "start": 9.8,
+        "end": 10.333
+      },
+      {
+        "event": "Shift",
+        "start": 10.333,
+        "end": 10.967
+      },
+      {
+        "event": "Compare",
+        "start": 10.967,
+        "end": 11.5
+      },
+      {
+        "event": "Shift",
+        "start": 11.5,
+        "end": 12.133
+      },
+      {
+        "event": "Compare",
+        "start": 12.133,
+        "end": 12.667
+      },
+      {
+        "event": "Shift",
+        "start": 12.667,
+        "end": 13.3
+      },
+      {
+        "event": "InsertKey",
+        "start": 13.3,
+        "end": 13.933
+      },
+      {
+        "event": "PassComplete",
+        "start": 13.933,
+        "end": 14.4
+      },
+      {
+        "event": "SelectKey",
+        "start": 14.4,
+        "end": 15.0
+      },
+      {
+        "event": "Compare",
+        "start": 15.0,
+        "end": 15.533
+      },
+      {
+        "event": "Shift",
+        "start": 15.533,
+        "end": 16.167
+      },
+      {
+        "event": "Compare",
+        "start": 16.167,
+        "end": 16.7
+      },
+      {
+        "event": "Shift",
+        "start": 16.7,
+        "end": 17.333
+      },
+      {
+        "event": "Compare",
+        "start": 17.333,
+        "end": 18.0
+      },
+      {
+        "event": "InsertKey",
+        "start": 18.0,
+        "end": 18.633
+      },
+      {
+        "event": "PassComplete",
+        "start": 18.633,
+        "end": 19.1
+      },
+      {
+        "event": "Complete",
+        "start": 19.1,
+        "end": 20.9
+      }
+    ],
+    "wall_seconds": 33.02,
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "pix_fmt": "yuv420p",
+          "r_frame_rate": "30/1"
+        }
+      ],
+      "format": {
+        "duration": "20.900000",
+        "size": "1164093"
+      }
+    },
+    "name": "custom-52413-warm",
+    "decode": "PASS"
+  },
+  {
+    "scene": "insertion_custom",
+    "values": [
+      10,
+      9,
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "render_seconds": 130.84,
+    "renderer_version": "arena-v3-insertion",
+    "path": "/home/lab335a/Sudarshan/Random-Papers-Projects/Algorithm-Arena/renderer/renders/insertion/worst10.mp4",
+    "timeline": [
+      {
+        "event": "SelectKey",
+        "start": 2.8,
+        "end": 3.3
+      },
+      {
+        "event": "Compare",
+        "start": 3.3,
+        "end": 3.733
+      },
+      {
+        "event": "Shift",
+        "start": 3.733,
+        "end": 4.267
+      },
+      {
+        "event": "InsertKey",
+        "start": 4.267,
+        "end": 4.8
+      },
+      {
+        "event": "PassComplete",
+        "start": 4.8,
+        "end": 5.2
+      },
+      {
+        "event": "SelectKey",
+        "start": 5.2,
+        "end": 5.7
+      },
+      {
+        "event": "Compare",
+        "start": 5.7,
+        "end": 6.133
+      },
+      {
+        "event": "Shift",
+        "start": 6.133,
+        "end": 6.667
+      },
+      {
+        "event": "Compare",
+        "start": 6.667,
+        "end": 7.1
+      },
+      {
+        "event": "Shift",
+        "start": 7.1,
+        "end": 7.633
+      },
+      {
+        "event": "InsertKey",
+        "start": 7.633,
+        "end": 8.167
+      },
+      {
+        "event": "PassComplete",
+        "start": 8.167,
+        "end": 8.567
+      },
+      {
+        "event": "SelectKey",
+        "start": 8.567,
+        "end": 9.067
+      },
+      {
+        "event": "Compare",
+        "start": 9.067,
+        "end": 9.5
+      },
+      {
+        "event": "Shift",
+        "start": 9.5,
+        "end": 10.033
+      },
+      {
+        "event": "Compare",
+        "start": 10.033,
+        "end": 10.467
+      },
+      {
+        "event": "Shift",
+        "start": 10.467,
+        "end": 11.0
+      },
+      {
+        "event": "Compare",
+        "start": 11.0,
+        "end": 11.433
+      },
+      {
+        "event": "Shift",
+        "start": 11.433,
+        "end": 11.967
+      },
+      {
+        "event": "InsertKey",
+        "start": 11.967,
+        "end": 12.5
+      },
+      {
+        "event": "PassComplete",
+        "start": 12.5,
+        "end": 12.9
+      },
+      {
+        "event": "SelectKey",
+        "start": 12.9,
+        "end": 13.4
+      },
+      {
+        "event": "Compare",
+        "start": 13.4,
+        "end": 13.833
+      },
+      {
+        "event": "Shift",
+        "start": 13.833,
+        "end": 14.367
+      },
+      {
+        "event": "Compare",
+        "start": 14.367,
+        "end": 14.8
+      },
+      {
+        "event": "Shift",
+        "start": 14.8,
+        "end": 15.333
+      },
+      {
+        "event": "Compare",
+        "start": 15.333,
+        "end": 15.767
+      },
+      {
+        "event": "Shift",
+        "start": 15.767,
+        "end": 16.3
+      },
+      {
+        "event": "Compare",
+        "start": 16.3,
+        "end": 16.733
+      },
+      {
+        "event": "Shift",
+        "start": 16.733,
+        "end": 17.267
+      },
+      {
+        "event": "InsertKey",
+        "start": 17.267,
+        "end": 17.8
+      },
+      {
+        "event": "PassComplete",
+        "start": 17.8,
+        "end": 18.2
+      },
+      {
+        "event": "SelectKey",
+        "start": 18.2,
+        "end": 18.7
+      },
+      {
+        "event": "Compare",
+        "start": 18.7,
+        "end": 19.133
+      },
+      {
+        "event": "Shift",
+        "start": 19.133,
+        "end": 19.667
+      },
+      {
+        "event": "Compare",
+        "start": 19.667,
+        "end": 20.1
+      },
+      {
+        "event": "Shift",
+        "start": 20.1,
+        "end": 20.633
+      },
+      {
+        "event": "Compare",
+        "start": 20.633,
+        "end": 21.067
+      },
+      {
+        "event": "Shift",
+        "start": 21.067,
+        "end": 21.6
+      },
+      {
+        "event": "Compare",
+        "start": 21.6,
+        "end": 22.033
+      },
+      {
+        "event": "Shift",
+        "start": 22.033,
+        "end": 22.567
+      },
+      {
+        "event": "Compare",
+        "start": 22.567,
+        "end": 23.0
+      },
+      {
+        "event": "Shift",
+        "start": 23.0,
+        "end": 23.533
+      },
+      {
+        "event": "InsertKey",
+        "start": 23.533,
+        "end": 24.067
+      },
+      {
+        "event": "PassComplete",
+        "start": 24.067,
+        "end": 24.467
+      },
+      {
+        "event": "SelectKey",
+        "start": 24.467,
+        "end": 24.967
+      },
+      {
+        "event": "Compare",
+        "start": 24.967,
+        "end": 25.4
+      },
+      {
+        "event": "Shift",
+        "start": 25.4,
+        "end": 25.933
+      },
+      {
+        "event": "Compare",
+        "start": 25.933,
+        "end": 26.367
+      },
+      {
+        "event": "Shift",
+        "start": 26.367,
+        "end": 26.9
+      },
+      {
+        "event": "Compare",
+        "start": 26.9,
+        "end": 27.333
+      },
+      {
+        "event": "Shift",
+        "start": 27.333,
+        "end": 27.867
+      },
+      {
+        "event": "Compare",
+        "start": 27.867,
+        "end": 28.3
+      },
+      {
+        "event": "Shift",
+        "start": 28.3,
+        "end": 28.833
+      },
+      {
+        "event": "Compare",
+        "start": 28.833,
+        "end": 29.267
+      },
+      {
+        "event": "Shift",
+        "start": 29.267,
+        "end": 29.8
+      },
+      {
+        "event": "Compare",
+        "start": 29.8,
+        "end": 30.233
+      },
+      {
+        "event": "Shift",
+        "start": 30.233,
+        "end": 30.767
+      },
+      {
+        "event": "InsertKey",
+        "start": 30.767,
+        "end": 31.3
+      },
+      {
+        "event": "PassComplete",
+        "start": 31.3,
+        "end": 31.7
+      },
+      {
+        "event": "SelectKey",
+        "start": 31.7,
+        "end": 32.2
+      },
+      {
+        "event": "Compare",
+        "start": 32.2,
+        "end": 32.633
+      },
+      {
+        "event": "Shift",
+        "start": 32.633,
+        "end": 33.167
+      },
+      {
+        "event": "Compare",
+        "start": 33.167,
+        "end": 33.6
+      },
+      {
+        "event": "Shift",
+        "start": 33.6,
+        "end": 34.133
+      },
+      {
+        "event": "Compare",
+        "start": 34.133,
+        "end": 34.567
+      },
+      {
+        "event": "Shift",
+        "start": 34.567,
+        "end": 35.1
+      },
+      {
+        "event": "Compare",
+        "start": 35.1,
+        "end": 35.533
+      },
+      {
+        "event": "Shift",
+        "start": 35.533,
+        "end": 36.067
+      },
+      {
+        "event": "Compare",
+        "start": 36.067,
+        "end": 36.5
+      },
+      {
+        "event": "Shift",
+        "start": 36.5,
+        "end": 37.033
+      },
+      {
+        "event": "Compare",
+        "start": 37.033,
+        "end": 37.467
+      },
+      {
+        "event": "Shift",
+        "start": 37.467,
+        "end": 38.0
+      },
+      {
+        "event": "Compare",
+        "start": 38.0,
+        "end": 38.433
+      },
+      {
+        "event": "Shift",
+        "start": 38.433,
+        "end": 38.967
+      },
+      {
+        "event": "InsertKey",
+        "start": 38.967,
+        "end": 39.5
+      },
+      {
+        "event": "PassComplete",
+        "start": 39.5,
+        "end": 39.9
+      },
+      {
+        "event": "SelectKey",
+        "start": 39.9,
+        "end": 40.4
+      },
+      {
+        "event": "Compare",
+        "start": 40.4,
+        "end": 40.833
+      },
+      {
+        "event": "Shift",
+        "start": 40.833,
+        "end": 41.367
+      },
+      {
+        "event": "Compare",
+        "start": 41.367,
+        "end": 41.8
+      },
+      {
+        "event": "Shift",
+        "start": 41.8,
+        "end": 42.333
+      },
+      {
+        "event": "Compare",
+        "start": 42.333,
+        "end": 42.767
+      },
+      {
+        "event": "Shift",
+        "start": 42.767,
+        "end": 43.3
+      },
+      {
+        "event": "Compare",
+        "start": 43.3,
+        "end": 43.733
+      },
+      {
+        "event": "Shift",
+        "start": 43.733,
+        "end": 44.267
+      },
+      {
+        "event": "Compare",
+        "start": 44.267,
+        "end": 44.7
+      },
+      {
+        "event": "Shift",
+        "start": 44.7,
+        "end": 45.233
+      },
+      {
+        "event": "Compare",
+        "start": 45.233,
+        "end": 45.667
+      },
+      {
+        "event": "Shift",
+        "start": 45.667,
+        "end": 46.2
+      },
+      {
+        "event": "Compare",
+        "start": 46.2,
+        "end": 46.633
+      },
+      {
+        "event": "Shift",
+        "start": 46.633,
+        "end": 47.167
+      },
+      {
+        "event": "Compare",
+        "start": 47.167,
+        "end": 47.6
+      },
+      {
+        "event": "Shift",
+        "start": 47.6,
+        "end": 48.133
+      },
+      {
+        "event": "InsertKey",
+        "start": 48.133,
+        "end": 48.667
+      },
+      {
+        "event": "PassComplete",
+        "start": 48.667,
+        "end": 49.067
+      },
+      {
+        "event": "SelectKey",
+        "start": 49.067,
+        "end": 49.567
+      },
+      {
+        "event": "Compare",
+        "start": 49.567,
+        "end": 50.0
+      },
+      {
+        "event": "Shift",
+        "start": 50.0,
+        "end": 50.533
+      },
+      {
+        "event": "Compare",
+        "start": 50.533,
+        "end": 50.967
+      },
+      {
+        "event": "Shift",
+        "start": 50.967,
+        "end": 51.5
+      },
+      {
+        "event": "Compare",
+        "start": 51.5,
+        "end": 51.933
+      },
+      {
+        "event": "Shift",
+        "start": 51.933,
+        "end": 52.467
+      },
+      {
+        "event": "Compare",
+        "start": 52.467,
+        "end": 52.9
+      },
+      {
+        "event": "Shift",
+        "start": 52.9,
+        "end": 53.433
+      },
+      {
+        "event": "Compare",
+        "start": 53.433,
+        "end": 53.867
+      },
+      {
+        "event": "Shift",
+        "start": 53.867,
+        "end": 54.4
+      },
+      {
+        "event": "Compare",
+        "start": 54.4,
+        "end": 54.833
+      },
+      {
+        "event": "Shift",
+        "start": 54.833,
+        "end": 55.367
+      },
+      {
+        "event": "Compare",
+        "start": 55.367,
+        "end": 55.8
+      },
+      {
+        "event": "Shift",
+        "start": 55.8,
+        "end": 56.333
+      },
+      {
+        "event": "Compare",
+        "start": 56.333,
+        "end": 56.767
+      },
+      {
+        "event": "Shift",
+        "start": 56.767,
+        "end": 57.3
+      },
+      {
+        "event": "Compare",
+        "start": 57.3,
+        "end": 57.733
+      },
+      {
+        "event": "Shift",
+        "start": 57.733,
+        "end": 58.267
+      },
+      {
+        "event": "InsertKey",
+        "start": 58.267,
+        "end": 58.8
+      },
+      {
+        "event": "PassComplete",
+        "start": 58.8,
+        "end": 59.2
+      },
+      {
+        "event": "Complete",
+        "start": 59.2,
+        "end": 60.8
+      }
+    ],
+    "wall_seconds": 132.6,
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "pix_fmt": "yuv420p",
+          "r_frame_rate": "30/1"
+        }
+      ],
+      "format": {
+        "duration": "60.800000",
+        "size": "5318166"
+      }
+    },
+    "name": "worst10",
+    "decode": "PASS"
+  },
+  {
+    "scene": "insertion_custom",
+    "values": [
+      10,
+      9,
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "render_seconds": 112.51,
+    "renderer_version": "arena-v3-insertion",
+    "path": "/home/lab335a/Sudarshan/Random-Papers-Projects/Algorithm-Arena/renderer/renders/insertion/worst10-warm.mp4",
+    "timeline": [
+      {
+        "event": "SelectKey",
+        "start": 2.8,
+        "end": 3.3
+      },
+      {
+        "event": "Compare",
+        "start": 3.3,
+        "end": 3.733
+      },
+      {
+        "event": "Shift",
+        "start": 3.733,
+        "end": 4.267
+      },
+      {
+        "event": "InsertKey",
+        "start": 4.267,
+        "end": 4.8
+      },
+      {
+        "event": "PassComplete",
+        "start": 4.8,
+        "end": 5.2
+      },
+      {
+        "event": "SelectKey",
+        "start": 5.2,
+        "end": 5.7
+      },
+      {
+        "event": "Compare",
+        "start": 5.7,
+        "end": 6.133
+      },
+      {
+        "event": "Shift",
+        "start": 6.133,
+        "end": 6.667
+      },
+      {
+        "event": "Compare",
+        "start": 6.667,
+        "end": 7.1
+      },
+      {
+        "event": "Shift",
+        "start": 7.1,
+        "end": 7.633
+      },
+      {
+        "event": "InsertKey",
+        "start": 7.633,
+        "end": 8.167
+      },
+      {
+        "event": "PassComplete",
+        "start": 8.167,
+        "end": 8.567
+      },
+      {
+        "event": "SelectKey",
+        "start": 8.567,
+        "end": 9.067
+      },
+      {
+        "event": "Compare",
+        "start": 9.067,
+        "end": 9.5
+      },
+      {
+        "event": "Shift",
+        "start": 9.5,
+        "end": 10.033
+      },
+      {
+        "event": "Compare",
+        "start": 10.033,
+        "end": 10.467
+      },
+      {
+        "event": "Shift",
+        "start": 10.467,
+        "end": 11.0
+      },
+      {
+        "event": "Compare",
+        "start": 11.0,
+        "end": 11.433
+      },
+      {
+        "event": "Shift",
+        "start": 11.433,
+        "end": 11.967
+      },
+      {
+        "event": "InsertKey",
+        "start": 11.967,
+        "end": 12.5
+      },
+      {
+        "event": "PassComplete",
+        "start": 12.5,
+        "end": 12.9
+      },
+      {
+        "event": "SelectKey",
+        "start": 12.9,
+        "end": 13.4
+      },
+      {
+        "event": "Compare",
+        "start": 13.4,
+        "end": 13.833
+      },
+      {
+        "event": "Shift",
+        "start": 13.833,
+        "end": 14.367
+      },
+      {
+        "event": "Compare",
+        "start": 14.367,
+        "end": 14.8
+      },
+      {
+        "event": "Shift",
+        "start": 14.8,
+        "end": 15.333
+      },
+      {
+        "event": "Compare",
+        "start": 15.333,
+        "end": 15.767
+      },
+      {
+        "event": "Shift",
+        "start": 15.767,
+        "end": 16.3
+      },
+      {
+        "event": "Compare",
+        "start": 16.3,
+        "end": 16.733
+      },
+      {
+        "event": "Shift",
+        "start": 16.733,
+        "end": 17.267
+      },
+      {
+        "event": "InsertKey",
+        "start": 17.267,
+        "end": 17.8
+      },
+      {
+        "event": "PassComplete",
+        "start": 17.8,
+        "end": 18.2
+      },
+      {
+        "event": "SelectKey",
+        "start": 18.2,
+        "end": 18.7
+      },
+      {
+        "event": "Compare",
+        "start": 18.7,
+        "end": 19.133
+      },
+      {
+        "event": "Shift",
+        "start": 19.133,
+        "end": 19.667
+      },
+      {
+        "event": "Compare",
+        "start": 19.667,
+        "end": 20.1
+      },
+      {
+        "event": "Shift",
+        "start": 20.1,
+        "end": 20.633
+      },
+      {
+        "event": "Compare",
+        "start": 20.633,
+        "end": 21.067
+      },
+      {
+        "event": "Shift",
+        "start": 21.067,
+        "end": 21.6
+      },
+      {
+        "event": "Compare",
+        "start": 21.6,
+        "end": 22.033
+      },
+      {
+        "event": "Shift",
+        "start": 22.033,
+        "end": 22.567
+      },
+      {
+        "event": "Compare",
+        "start": 22.567,
+        "end": 23.0
+      },
+      {
+        "event": "Shift",
+        "start": 23.0,
+        "end": 23.533
+      },
+      {
+        "event": "InsertKey",
+        "start": 23.533,
+        "end": 24.067
+      },
+      {
+        "event": "PassComplete",
+        "start": 24.067,
+        "end": 24.467
+      },
+      {
+        "event": "SelectKey",
+        "start": 24.467,
+        "end": 24.967
+      },
+      {
+        "event": "Compare",
+        "start": 24.967,
+        "end": 25.4
+      },
+      {
+        "event": "Shift",
+        "start": 25.4,
+        "end": 25.933
+      },
+      {
+        "event": "Compare",
+        "start": 25.933,
+        "end": 26.367
+      },
+      {
+        "event": "Shift",
+        "start": 26.367,
+        "end": 26.9
+      },
+      {
+        "event": "Compare",
+        "start": 26.9,
+        "end": 27.333
+      },
+      {
+        "event": "Shift",
+        "start": 27.333,
+        "end": 27.867
+      },
+      {
+        "event": "Compare",
+        "start": 27.867,
+        "end": 28.3
+      },
+      {
+        "event": "Shift",
+        "start": 28.3,
+        "end": 28.833
+      },
+      {
+        "event": "Compare",
+        "start": 28.833,
+        "end": 29.267
+      },
+      {
+        "event": "Shift",
+        "start": 29.267,
+        "end": 29.8
+      },
+      {
+        "event": "Compare",
+        "start": 29.8,
+        "end": 30.233
+      },
+      {
+        "event": "Shift",
+        "start": 30.233,
+        "end": 30.767
+      },
+      {
+        "event": "InsertKey",
+        "start": 30.767,
+        "end": 31.3
+      },
+      {
+        "event": "PassComplete",
+        "start": 31.3,
+        "end": 31.7
+      },
+      {
+        "event": "SelectKey",
+        "start": 31.7,
+        "end": 32.2
+      },
+      {
+        "event": "Compare",
+        "start": 32.2,
+        "end": 32.633
+      },
+      {
+        "event": "Shift",
+        "start": 32.633,
+        "end": 33.167
+      },
+      {
+        "event": "Compare",
+        "start": 33.167,
+        "end": 33.6
+      },
+      {
+        "event": "Shift",
+        "start": 33.6,
+        "end": 34.133
+      },
+      {
+        "event": "Compare",
+        "start": 34.133,
+        "end": 34.567
+      },
+      {
+        "event": "Shift",
+        "start": 34.567,
+        "end": 35.1
+      },
+      {
+        "event": "Compare",
+        "start": 35.1,
+        "end": 35.533
+      },
+      {
+        "event": "Shift",
+        "start": 35.533,
+        "end": 36.067
+      },
+      {
+        "event": "Compare",
+        "start": 36.067,
+        "end": 36.5
+      },
+      {
+        "event": "Shift",
+        "start": 36.5,
+        "end": 37.033
+      },
+      {
+        "event": "Compare",
+        "start": 37.033,
+        "end": 37.467
+      },
+      {
+        "event": "Shift",
+        "start": 37.467,
+        "end": 38.0
+      },
+      {
+        "event": "Compare",
+        "start": 38.0,
+        "end": 38.433
+      },
+      {
+        "event": "Shift",
+        "start": 38.433,
+        "end": 38.967
+      },
+      {
+        "event": "InsertKey",
+        "start": 38.967,
+        "end": 39.5
+      },
+      {
+        "event": "PassComplete",
+        "start": 39.5,
+        "end": 39.9
+      },
+      {
+        "event": "SelectKey",
+        "start": 39.9,
+        "end": 40.4
+      },
+      {
+        "event": "Compare",
+        "start": 40.4,
+        "end": 40.833
+      },
+      {
+        "event": "Shift",
+        "start": 40.833,
+        "end": 41.367
+      },
+      {
+        "event": "Compare",
+        "start": 41.367,
+        "end": 41.8
+      },
+      {
+        "event": "Shift",
+        "start": 41.8,
+        "end": 42.333
+      },
+      {
+        "event": "Compare",
+        "start": 42.333,
+        "end": 42.767
+      },
+      {
+        "event": "Shift",
+        "start": 42.767,
+        "end": 43.3
+      },
+      {
+        "event": "Compare",
+        "start": 43.3,
+        "end": 43.733
+      },
+      {
+        "event": "Shift",
+        "start": 43.733,
+        "end": 44.267
+      },
+      {
+        "event": "Compare",
+        "start": 44.267,
+        "end": 44.7
+      },
+      {
+        "event": "Shift",
+        "start": 44.7,
+        "end": 45.233
+      },
+      {
+        "event": "Compare",
+        "start": 45.233,
+        "end": 45.667
+      },
+      {
+        "event": "Shift",
+        "start": 45.667,
+        "end": 46.2
+      },
+      {
+        "event": "Compare",
+        "start": 46.2,
+        "end": 46.633
+      },
+      {
+        "event": "Shift",
+        "start": 46.633,
+        "end": 47.167
+      },
+      {
+        "event": "Compare",
+        "start": 47.167,
+        "end": 47.6
+      },
+      {
+        "event": "Shift",
+        "start": 47.6,
+        "end": 48.133
+      },
+      {
+        "event": "InsertKey",
+        "start": 48.133,
+        "end": 48.667
+      },
+      {
+        "event": "PassComplete",
+        "start": 48.667,
+        "end": 49.067
+      },
+      {
+        "event": "SelectKey",
+        "start": 49.067,
+        "end": 49.567
+      },
+      {
+        "event": "Compare",
+        "start": 49.567,
+        "end": 50.0
+      },
+      {
+        "event": "Shift",
+        "start": 50.0,
+        "end": 50.533
+      },
+      {
+        "event": "Compare",
+        "start": 50.533,
+        "end": 50.967
+      },
+      {
+        "event": "Shift",
+        "start": 50.967,
+        "end": 51.5
+      },
+      {
+        "event": "Compare",
+        "start": 51.5,
+        "end": 51.933
+      },
+      {
+        "event": "Shift",
+        "start": 51.933,
+        "end": 52.467
+      },
+      {
+        "event": "Compare",
+        "start": 52.467,
+        "end": 52.9
+      },
+      {
+        "event": "Shift",
+        "start": 52.9,
+        "end": 53.433
+      },
+      {
+        "event": "Compare",
+        "start": 53.433,
+        "end": 53.867
+      },
+      {
+        "event": "Shift",
+        "start": 53.867,
+        "end": 54.4
+      },
+      {
+        "event": "Compare",
+        "start": 54.4,
+        "end": 54.833
+      },
+      {
+        "event": "Shift",
+        "start": 54.833,
+        "end": 55.367
+      },
+      {
+        "event": "Compare",
+        "start": 55.367,
+        "end": 55.8
+      },
+      {
+        "event": "Shift",
+        "start": 55.8,
+        "end": 56.333
+      },
+      {
+        "event": "Compare",
+        "start": 56.333,
+        "end": 56.767
+      },
+      {
+        "event": "Shift",
+        "start": 56.767,
+        "end": 57.3
+      },
+      {
+        "event": "Compare",
+        "start": 57.3,
+        "end": 57.733
+      },
+      {
+        "event": "Shift",
+        "start": 57.733,
+        "end": 58.267
+      },
+      {
+        "event": "InsertKey",
+        "start": 58.267,
+        "end": 58.8
+      },
+      {
+        "event": "PassComplete",
+        "start": 58.8,
+        "end": 59.2
+      },
+      {
+        "event": "Complete",
+        "start": 59.2,
+        "end": 60.8
+      }
+    ],
+    "wall_seconds": 114.34,
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "pix_fmt": "yuv420p",
+          "r_frame_rate": "30/1"
+        }
+      ],
+      "format": {
+        "duration": "60.800000",
+        "size": "5318166"
+      }
+    },
+    "name": "worst10-warm",
+    "decode": "PASS"
+  }
+]

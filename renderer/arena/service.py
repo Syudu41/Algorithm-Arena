@@ -25,6 +25,7 @@ from .validation import InputError, validate_values
 
 ROOT = Path(__file__).resolve().parents[2]
 KEY = re.compile(r'[a-f0-9]{32}')
+SCENE_KEYS = {'bubble': 'custom', 'insertion': 'insertion_custom'}
 # Cache changes with trusted sources/fonts as well as explicit renderer version.
 FINGERPRINT = hashlib.sha256(RENDERER_VERSION.encode() + b''.join(
     p.read_bytes() for p in sorted((ROOT / 'renderer/arena').glob('*.py'))
@@ -47,10 +48,18 @@ class RenderJobs:
         self.worker = threading.Lock()  # exactly one Manim process
 
     def submit(self, payload):
-        if not isinstance(payload, dict) or set(payload) != {'algorithm', 'values'} or payload['algorithm'] != 'bubble':
-            raise InputError('send algorithm "bubble" and values only')
+        if not isinstance(payload, dict) or set(payload) != {'algorithm', 'values'} or payload['algorithm'] not in ('bubble', 'insertion'):
+            raise InputError('send algorithm "bubble" or "insertion" and values only')
         values = validate_values(payload['values'])
-        ident = hashlib.sha256(json.dumps([FINGERPRINT, values]).encode()).hexdigest()[:32]
+        algorithm = payload['algorithm']
+        if algorithm == 'bubble':
+            trace = bubble_trace(values)
+            operations = {'swaps': trace.swaps}
+        else:
+            from .insertion import insertion_trace
+            trace = insertion_trace(values)
+            operations = {'shifts': trace.shifts, 'placements': trace.placements}
+        ident = hashlib.sha256(json.dumps([FINGERPRINT, algorithm, values]).encode()).hexdigest()[:32]
         with self.lock:
             existing = self.jobs.get(ident)
             if existing and existing['status'] in ('queued', 'rendering'):
@@ -59,17 +68,16 @@ class RenderJobs:
             if meta_path.is_file() and video.is_file():
                 try:
                     result = json.loads(meta_path.read_text())
-                    if result['initial'] == values and result['fingerprint'] == FINGERPRINT:
+                    if result['initial'] == values and result['fingerprint'] == FINGERPRINT and result['algorithm'] == algorithm:
                         result['cached'] = True
                         return result
                 except (ValueError, KeyError):
                     pass
             if not self.slots.acquire(blocking=False):
                 raise BusyError('Render queue is full. Try again after a job finishes.')
-            trace = bubble_trace(values)
             result = {'id': ident, 'status': 'queued', 'initial': values,
                       'final': list(trace.final), 'comparisons': trace.comparisons,
-                      'swaps': trace.swaps, 'cached': False, 'fingerprint': FINGERPRINT}
+                      'algorithm': algorithm, **operations, 'cached': False, 'fingerprint': FINGERPRINT}
             # Bounded in-memory history; persistent completed videos remain cached.
             if len(self.jobs) >= 100:
                 for old in list(self.jobs):
@@ -104,7 +112,8 @@ class RenderJobs:
                 self._update(ident, status='rendering')
                 job = self.output / f'{ident}.input.json'
                 video = self.output / f'{ident}.mp4'
-                job.write_text(json.dumps({'scene': 'custom', 'values': self.get(ident)['initial']}))
+                request = self.get(ident)
+                job.write_text(json.dumps({'scene': SCENE_KEYS[request['algorithm']], 'values': request['initial']}))
                 started = time.perf_counter()
                 with subprocess.Popen(self._command(job, video), cwd=ROOT / 'renderer',
                                       stdout=subprocess.PIPE, stderr=subprocess.PIPE,

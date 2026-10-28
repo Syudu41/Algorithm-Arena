@@ -1,0 +1,206 @@
+{
+  "scene": "insertion_tutorial",
+  "values": [
+    4,
+    1,
+    6,
+    2,
+    5,
+    3
+  ],
+  "render_seconds": 70.36,
+  "renderer_version": "arena-v3-insertion",
+  "path": "/home/lab335a/Sudarshan/Random-Papers-Projects/Algorithm-Arena/media/insertion-tutorial.mp4",
+  "timeline": [
+    {
+      "event": "SelectKey",
+      "start": 5.933,
+      "end": 6.567
+    },
+    {
+      "event": "Compare",
+      "start": 6.567,
+      "end": 7.233
+    },
+    {
+      "event": "Shift",
+      "start": 8.5,
+      "end": 9.233
+    },
+    {
+      "event": "InsertKey",
+      "start": 9.233,
+      "end": 9.933
+    },
+    {
+      "event": "PassComplete",
+      "start": 11.4,
+      "end": 12.0
+    },
+    {
+      "event": "SelectKey",
+      "start": 12.0,
+      "end": 12.633
+    },
+    {
+      "event": "Compare",
+      "start": 13.9,
+      "end": 14.7
+    },
+    {
+      "event": "InsertKey",
+      "start": 14.7,
+      "end": 15.4
+    },
+    {
+      "event": "PassComplete",
+      "start": 15.4,
+      "end": 16.0
+    },
+    {
+      "event": "SelectKey",
+      "start": 17.267,
+      "end": 17.9
+    },
+    {
+      "event": "Compare",
+      "start": 17.9,
+      "end": 18.567
+    },
+    {
+      "event": "Shift",
+      "start": 18.567,
+      "end": 19.3
+    },
+    {
+      "event": "Compare",
+      "start": 19.3,
+      "end": 19.967
+    },
+    {
+      "event": "Shift",
+      "start": 19.967,
+      "end": 20.7
+    },
+    {
+      "event": "Compare",
+      "start": 20.7,
+      "end": 21.5
+    },
+    {
+      "event": "InsertKey",
+      "start": 21.5,
+      "end": 22.2
+    },
+    {
+      "event": "PassComplete",
+      "start": 22.2,
+      "end": 22.8
+    },
+    {
+      "event": "SelectKey",
+      "start": 22.8,
+      "end": 23.433
+    },
+    {
+      "event": "Compare",
+      "start": 23.433,
+      "end": 24.1
+    },
+    {
+      "event": "Shift",
+      "start": 24.1,
+      "end": 24.833
+    },
+    {
+      "event": "Compare",
+      "start": 24.833,
+      "end": 25.633
+    },
+    {
+      "event": "InsertKey",
+      "start": 25.633,
+      "end": 26.333
+    },
+    {
+      "event": "PassComplete",
+      "start": 26.333,
+      "end": 26.933
+    },
+    {
+      "event": "SelectKey",
+      "start": 26.933,
+      "end": 27.567
+    },
+    {
+      "event": "Compare",
+      "start": 27.567,
+      "end": 28.233
+    },
+    {
+      "event": "Shift",
+      "start": 28.233,
+      "end": 28.967
+    },
+    {
+      "event": "Compare",
+      "start": 28.967,
+      "end": 29.633
+    },
+    {
+      "event": "Shift",
+      "start": 29.633,
+      "end": 30.367
+    },
+    {
+      "event": "Compare",
+      "start": 30.367,
+      "end": 31.033
+    },
+    {
+      "event": "Shift",
+      "start": 31.033,
+      "end": 31.767
+    },
+    {
+      "event": "Compare",
+      "start": 31.767,
+      "end": 32.567
+    },
+    {
+      "event": "InsertKey",
+      "start": 32.567,
+      "end": 33.267
+    },
+    {
+      "event": "PassComplete",
+      "start": 33.267,
+      "end": 33.867
+    },
+    {
+      "event": "Complete",
+      "start": 33.867,
+      "end": 35.667
+    }
+  ],
+  "wall_seconds": 72.03,
+  "probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "pix_fmt": "yuv420p",
+        "r_frame_rate": "30/1"
+      }
+    ],
+    "format": {
+      "duration": "41.166667",
+      "size": "2431091"
+    }
+  },
+  "name": "tutorial",
+  "decode": "PASS"
+}
