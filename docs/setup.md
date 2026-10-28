@@ -46,9 +46,9 @@ machine installation benchmark.
 
 ## Backup and reproducible real defect
 
-The original three MP4s remain in `media/`; `bubble-tutorial-v3.mp4` contains the
-caption improvement and is packaged as the public explanation. `c52413.mp4` and
-`c83726.mp4` are offline custom-example backups. Keep them for the lecture if the
+The corrected `media/bubble-tutorial-v3.mp4` is the public explanation.
+`c52413.mp4` and `c83726.mp4` are offline custom-example
+backups. Insertion Sort has equivalent tutorial and custom-example files. Keep them for the lecture if the
 live renderer fails. The public tutorial works independently of the Python API.
 
 A real defect found during this session: `Path.replace()` tried to move a
@@ -56,20 +56,19 @@ finished `/tmp/arena-…/out.mp4` into the repository across filesystem boundari
 raising `OSError: [Errno 18] Invalid cross-device link`. The correction copies
 into a destination-side `.part.mp4` before atomic rename. The baseline test
 had both temporary and output files in `/tmp`, so it missed the defect.
-The initial source archive and staged/unstaged patches are preserved in `/tmp/`;
-see the evidence log for exact paths. Do not present this as a seeded defect.
+See the retained source diff in [evidence](evidence.md). Do not present this as a
+seeded defect. Git history preserves the original implementation.
 
 ## GitHub Pages
 
 Publish only `dist/` on the `gh-pages` branch, with Pages source `gh-pages` `/`.
 Build with `node scripts/build.mjs`, copy `dist/.` into a separate checkout of
-that branch, commit and push normally (never force push). The source working
-tree has pre-existing staged work and should be reviewed separately. Pages
+that branch, commit and push normally (never force push). Review the source changes before release. Pages
 contains only static assets: public on-demand rendering is not implemented.
 
 See [GitHub's Pages API documentation](https://docs.github.com/en/rest/pages/pages)
 for the branch publishing configuration. Deployment status and actual URL checks
-are recorded in `implementation_evidence.md`.
+are recorded in [evidence](evidence.md).
 
 
 ## Insertion Sort
@@ -77,8 +76,8 @@ are recorded in `implementation_evidence.md`.
 Insertion Sort appears immediately below Bubble Sort in the catalog and at
 `#/sorting/insertion-sort`. Public pages play the bundled explanation without
 local-only controls; the local server enables its custom-array form. For
-[5,2,4,1,3], Insertion reports9 comparisons,7 shifts and4 key placements. Bubble
-reports10 comparisons and7 swaps. These operations are defined in each lesson;
+[5,2,4,1,3], Insertion reports 9 comparisons, 7 shifts and 4 key placements. Bubble
+reports 10 comparisons and 7 swaps. These operations are defined in each lesson;
 a shift or key placement is not reported as a swap. The cache includes the
 algorithm as well as normalized values and renderer fingerprint.
 
@@ -89,4 +88,4 @@ ARENA_URL=https://syudu41.github.io/Algorithm-Arena ARENA_STATIC_ONLY=1 node scr
 ```
 
 The reusable `Manim-agent` developer command and its optional parameters are
-explained in README. This is a development helper, not an AI service in the site.
+explained in [agent](agent.md). This is a development helper, not an AI service in the site.

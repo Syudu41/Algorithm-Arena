@@ -12,13 +12,14 @@ trace-to-scene stage, fonts, tests and three original MP4s were preserved.
 
 Real defect: repository-local output failed with a cross-device rename. The
 baseline `/tmp` render test passed because both files were on the same filesystem.
-See the retained [renderer diff](evidence/renderer-changes.diff) and evidence log.
+See the retained [renderer diff](evidence/renderer-changes.diff) and
+[evidence](evidence.md).
 This is an authentic debugging example, not a seeded educational failure.
 
 Visual review found overlapping caption text and stale comparison cues. The
 repair changes caption transitions while preserving timing and shared tiles.
-Both observations came from freshly rendered MP4 frames. Before/after evidence
-is retained; the original tutorial MP4 was not overwritten.
+Both observations came from freshly rendered MP4 frames. Reviewed frames and the source diff are retained. The corrected tutorial is now
+the canonical release; Git history preserves its original version.
 
 The agent self-reviewed changes against the task contract. Human engineering
 review remains necessary; do not describe this as an approved human review or

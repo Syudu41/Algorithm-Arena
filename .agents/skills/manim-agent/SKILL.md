@@ -28,9 +28,8 @@ Preview renders may use 854×480/15 fps and must be labeled as previews.
 
 ## Own the animation package
 
-Read current user instructions, root AGENTS.md, the two ALGORITHM_ARENA plans,
-and the existing renderer before editing. Later user requests supersede the
-plans' old Bubble-only scope. Preserve working Bubble Sort and the installed
+Read current user instructions, root AGENTS.md, docs/plan.md,
+and the existing renderer before editing. Later user requests supersede the plan. Preserve working Bubble Sort and the installed
 Manim Community Edition engine; no engine migration or browser substitute.
 Use `.venv-manim/bin/python` with `.venv-manim/bin` on PATH. The existing render
 worker registers vendored CMR fonts and finds TeX via ARENA_TEX_BIN/TinyTeX.
@@ -71,8 +70,9 @@ Do not claim a clean-machine cold benchmark unless it was actually performed.
 
 Return source/media paths, exact input→output and metrics, commands and exit
 codes, render metadata, review frames, visual PASS/FAIL observations and remaining
-limitations. Save these in docs/evidence/<algorithm>/ (or an existing focused
-algorithm evidence file). Failed or unreviewed output is not release-ready.
+limitations. Save fresh render logs, metadata and captures in ignored artifacts/renders/<algorithm>/.
+Curate useful reviewed release proof into docs/evidence/<algorithm>/ and index it
+in docs/evidence.md; do not commit every repeated capture or full trace dump. Failed or unreviewed output is not release-ready.
 
 In delegated mode do not commit; the coordinator reviews the complete feature,
 integrates it, and commits. In direct terminal mode commit the completed,
