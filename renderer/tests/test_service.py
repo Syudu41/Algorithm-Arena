@@ -125,3 +125,37 @@ def test_insertion_uses_fixed_trusted_worker_scene(tmp_path, monkeypatch):
     job=jobs.submit({'algorithm':'insertion','values':[-99,0,99]})
     assert wait_for(jobs,job['id'])['status'] == 'failed'
     assert seen == [{'scene':'insertion_custom','values':[-99,0,99]}]
+
+
+def test_merge_metrics_and_cache_are_algorithm_specific(tmp_path, monkeypatch):
+    jobs = RenderJobs(tmp_path, capacity=3)
+    monkeypatch.setattr(jobs, '_command', lambda *_: [sys.executable,'-c','raise SystemExit(1)'])
+    results = [jobs.submit({'algorithm':name,'values':[5,2,4,1,3]})
+               for name in ('bubble','insertion','merge')]
+    assert len({job['id'] for job in results}) == 3
+    merge = results[-1]
+    assert merge['final'] == [1,2,3,4,5]
+    assert (merge['comparisons'],merge['writes']) == (8,12)
+    assert not {'swaps','shifts','placements'} & merge.keys()
+    for job in results:
+        assert wait_for(jobs,job['id'])['status'] == 'failed'
+
+
+def test_merge_uses_fixed_trusted_worker_scene(tmp_path, monkeypatch):
+    jobs = RenderJobs(tmp_path)
+    seen=[]
+    def command(job, video):
+        seen.append(json.loads(job.read_text()))
+        return [sys.executable,'-c','raise SystemExit(1)']
+    monkeypatch.setattr(jobs, '_command', command)
+    job = jobs.submit({'algorithm':'merge','values':[-99,0,99]})
+    assert wait_for(jobs,job['id'])['status'] == 'failed'
+    assert seen == [{'scene':'merge_custom','values':[-99,0,99]}]
+
+
+@pytest.mark.parametrize('values',[[True,2],[1,100],[1],list(range(11))])
+def test_merge_rejects_invalid_input_before_spawning(tmp_path, values):
+    jobs = RenderJobs(tmp_path)
+    with pytest.raises(InputError):
+        jobs.submit({'algorithm':'merge','values':values})
+    assert not jobs.jobs
