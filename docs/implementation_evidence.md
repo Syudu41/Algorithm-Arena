@@ -472,3 +472,28 @@ brand title. Manim/GIF text and media are unchanged.
 Chrome's platform-font inspection confirmed CMU Serif on the heading and
 Liberation Sans (Arial-compatible) on running text. All three pages fit at
 320/390/768/1440px. Fourteen checks passed; see `typography-checks.json`.
+
+## Reusable Manim agent feature — 2026-10-28
+
+User selected both Codex and terminal invocation, a full animation-package role,
+and an Insertion Sort card/detail lesson with local-only custom input. Added
+native `.codex/agents/manim-agent.toml`, repository skill
+`.agents/skills/manim-agent/SKILL.md`, and AGENTS.md routing/feature-commit rules.
+The role inherits model/permissions and owns traces, scenes, media, tests and
+visual evidence; website integration/publishing remain with the coordinator.
+
+Added executable `bin/Manim-agent`, backed by `scripts/manim_agent.py`. It accepts
+natural algorithm words, optional URL, values/mode/quality/pace/output options.
+Normal execution sends a normalized JSON request through stdin to the installed
+Codex CLI, using argv and workspace-write, without bypassing approvals. Dry run
+is offline. README contains both invocation styles and parameter examples.
+
+Validation: skill-creator quick_validate reported valid; native TOML parsed with
+all required fields; **10 offline CLI tests passed** in 0.11s (parsing, invalid
+values/paths/URLs, no-call dry run, argv/stdin dispatch and exit-code propagation).
+Actual executable `--help` and an Insertion Sort URL/negative-array `--dry-run`
+returned 0. Installed `codex exec --help` confirms the launch flags. No real
+model request was made through the terminal launcher during these interface
+tests; the following Insertion Sort feature will exercise the agent workflow
+through the available delegation tool using the same role/skill instructions.
+No Insertion Sort implementation is included in the agent-definition commit.
