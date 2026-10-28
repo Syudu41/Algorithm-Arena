@@ -34,3 +34,15 @@ The public static site does not expose the local custom-input form.
 Human/projector review is pending. Render latency varies with load and input;
 ten-item films can exceed the typical five-item playback range. There is no
 public rendering service or Race implementation.
+
+## Current brand mark
+
+The header uses an original ten-ribbon SVG rosette with a 24-second continuous
+rotation and a matching static favicon/reduced-motion alternative. No lettermark
+or external font is used. Browser review passed five checks: actual moving
+pixels, 320px header fit, static fallback selection, stationary reduced-motion
+pixels and the 24-second infinite loop. Responsive lesson regression passed
+23 checks across 320, 390, 768 and 1440px with zero runtime exceptions. Node
+validation passed (one test), and the production build passed. Actual desktop,
+mobile and enlarged-symbol captures were reviewed locally and remain ignored.
+This native SVG change required no Manim render; lesson timings are unchanged.
