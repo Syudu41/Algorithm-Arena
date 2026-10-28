@@ -21,8 +21,9 @@
   --blue: #58c4dd;
   --red: #ffaaa4;
   --green: #a5d68d;
-  --ui: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-family: CMU, Georgia, serif;
+  --ui: Arial, Helvetica, 'Liberation Sans', sans-serif;
+  --heading: CMU, 'Computer Modern', Georgia, serif;
+  font-family: var(--ui);
   font-size: 19px;
   line-height: 1.65;
   background: var(--bg);
@@ -78,6 +79,7 @@ footer { display: flex; justify-content: space-between; align-items: center; gap
 .footer-links a:hover { color: var(--ink); }
 
 h1, h2, h3, p { margin: 0; }
+h1, h2, h3, .brand { font-family: var(--heading); }
 h1, h2 { font-weight: 400; text-wrap: balance; }
 h1 { font-size: clamp(44px, 5.7vw, 72px); line-height: 1.12; letter-spacing: -1.7px; }
 h1 em { color: var(--yellow); }
@@ -273,3 +275,8 @@ input[aria-invalid] { border-color: var(--red); }
 @media (max-width: 760px) {
   .lesson-section:last-child { padding-bottom: 44px; }
 }
+
+.algorithm-card + .algorithm-card { margin-top: 24px; }
+.insertion-diagram .ordered { border-color: var(--blue); background: #14243a; }
+.insertion-diagram .key { border-color: #fc6255; transform: translateY(-12px); }
+.legend .prefix { color: var(--blue); }
