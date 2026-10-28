@@ -59,7 +59,10 @@ particles, copied reference media or invisible jump-cut swaps.
 
 Run correctness/trace tests including duplicates, all equal, sorted/reversed,
 negatives and boundary values; retain Bubble regressions after shared changes.
-Render the tutorial and two distinct exact custom inputs. Decode actual MP4s,
+Respect the requested mode. For a full/both release package, render the tutorial
+and two distinct exact custom inputs. For tutorial-only or custom-only requests,
+verify that requested subset and reuse unaffected existing assets; do not expand
+the task into an unrequested package. Label preview quality explicitly. Decode actual MP4s,
 probe codec/resolution/fps/duration/bytes, and review actual frames including a
 motion midpoint, comparison/keep case, progress state and final result. Check
 CMR and 720p legibility. Measure scene render, process wall and playback times
