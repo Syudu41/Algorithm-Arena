@@ -593,3 +593,37 @@ public URL, including card order, real playback, actual CMR/Arial-compatible
 fonts, all four routes at320/390/768/1440px, nested reload and hidden local-only
 controls. Full report: `docs/evidence/insertion/deployment-verification.json`.
 No new source branch was created; all source work is on main.
+
+## Animated header logo and favicon — 2026-10-28
+
+User requested a professionally designed looping SVG logo and clarified scope:
+header logo and favicon only; preserve the large About title animation.
+Replaced the generic arrow glyph with an original geometric gold A in a cyan
+orbit, retaining the CMR wordmark. The self-contained native SVG animates the
+orbit through a seamless eight-second rotation while the A stays stationary.
+This UI brand asset is authored directly as vector code; no Manim algorithm
+footage or raster/vector conversion is involved, and no Claude media is reused.
+
+Assets: `web/assets/algorithm-arena-logo.svg` (813 bytes, transparent animated
+SVG), matching static `web/favicon.svg` (566 bytes). Both use64×64 viewBoxes and
+share the same vector geometry. Favicon is intentionally static. A header
+picture source also selects that static mark for reduced-motion preferences.
+Image-internal media CSS alone did not reliably stop motion in the initial
+Chrome emulation test; explicit picture source selection fixed the observed
+failure. No visible pause control was added. About GIF/source is unchanged.
+
+Kept the mark visible on mobile (the old arrow had been hidden), refined the
+small-screen lockup to retain both navigation links at320px, and kept the brand
+link at least44px high. Image alt is empty/aria-hidden so the link's accessible
+name remains the readable Algorithm Arena wordmark.
+
+`npm run build`, `npm test`, `git diff --check`: exit0. Both SVGs parsed as valid
+XML with the expected viewBox. Actual Chrome checks: **13 passed**. They include
+SVG loading, accessible label, unchanged About GIF, changing rendered pixels,
+continued animation after the first full eight-second loop, static reduced-motion
+output, visible logo/navigation without overflow at320/390/768/1440px, brand link
+navigation, favicon consistency and no runtime exceptions. Evidence:
+`logo-browser-checks.json`, `logo-mark.png`, `logo-about-{320,390,1440}.png`.
+The temporary harness is `/tmp/arena-logo-check.mjs`. No Python/Manim changes
+required an algorithm regression or new video render. Browser verification is
+Chrome-only; design review uses the actual header and enlarged mark captures.

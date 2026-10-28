@@ -1,0 +1,18 @@
+{
+  "results": [
+    "PASS header loads native animated SVG",
+    "PASS brand accessible label uses wordmark, not duplicate icon text",
+    "PASS About title GIF remains unchanged",
+    "PASS native SVG loops with visible motion",
+    "PASS SVG keeps moving beyond its first eight-second loop",
+    "PASS reduced motion freezes SVG",
+    "PASS 1440px header keeps logo and navigation visible without overflow",
+    "PASS 768px header keeps logo and navigation visible without overflow",
+    "PASS 390px header keeps logo and navigation visible without overflow",
+    "PASS 320px header keeps logo and navigation visible without overflow",
+    "PASS brand navigates back to About",
+    "PASS favicon has a consistent static vector mark",
+    "PASS no runtime exceptions"
+  ],
+  "errors": []
+}

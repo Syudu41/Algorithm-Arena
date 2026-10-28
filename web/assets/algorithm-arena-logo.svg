@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <title>Algorithm Arena</title>
+  <desc>A golden geometric A inside a cyan orbit.</desc>
+  <style>
+    .orbit { transform-origin:32px 32px; animation:orbit 8s linear infinite; }
+    @keyframes orbit { to { transform:rotate(360deg); } }
+    @media (prefers-reduced-motion:reduce) { .orbit { animation:none; } }
+  </style>
+  <g class="orbit" stroke="#58c4dd" stroke-width="3" stroke-linecap="round">
+    <path d="M32 5a27 27 0 0 1 27 27"/>
+    <path d="M59 32a27 27 0 0 1-27 27" opacity=".62"/>
+    <path d="M32 59A27 27 0 0 1 5 32" opacity=".30"/>
+    <path d="M5 32A27 27 0 0 1 32 5" opacity=".12"/>
+  </g>
+  <path d="m18 44 14-27 14 27M23 35h18" stroke="#ffd25e" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

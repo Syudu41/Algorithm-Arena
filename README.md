@@ -118,3 +118,12 @@ Agent/skill mechanisms follow the official documentation for
 [custom agents](https://learn.chatgpt.com/docs/agent-configuration/subagents),
 [skills](https://learn.chatgpt.com/docs/build-skills), and
 [noninteractive Codex](https://learn.chatgpt.com/docs/non-interactive-mode).
+
+## Brand assets
+
+The header uses the native animated SVG at
+[`web/assets/algorithm-arena-logo.svg`](web/assets/algorithm-arena-logo.svg):
+a geometric A with an eight-second cyan orbit. The matching
+[`web/favicon.svg`](web/favicon.svg) is static and also supplies the header's
+reduced-motion fallback. Both are self-contained vectors without external fonts,
+scripts or dependencies. The About-page title GIF remains a separate asset.
