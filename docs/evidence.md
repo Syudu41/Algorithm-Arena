@@ -110,3 +110,18 @@ Markdown links and diff whitespace checks passed. The output contains exactly
 21 required files and no trial/archive media. All six prior release media files
 retain their original bytes. No public custom-render API, audio or Race feature
 was added. Human/projector review remains pending.
+
+## Merge public release
+
+GitHub Pages build `88c0e12` completed successfully. Published HTML, app JavaScript,
+Merge tutorial and poster matched the release build byte-for-byte. The actual
+public browser suite passed **27 checks**, with zero runtime exceptions, including
+Explain playback, correct third-card order, responsive layouts and no custom
+form on the static lesson. An initial check during the pending Pages build saw
+the previous two-card site and timed out; the completed release was verified
+after the build reported success, using a fresh release URL.
+
+Source changes were committed incrementally: trace, local API, reviewed animation
+package, then website integration. Only the required Merge tutorial and poster
+were added to public media. Trial/custom/stress films and full review captures
+remain local and ignored. The public lesson is `#/sorting/merge-sort`.
