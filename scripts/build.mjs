@@ -4,7 +4,7 @@ const root = fileURLToPath(new URL('../',import.meta.url));
 await mkdir(root+'dist',{recursive:true});
 await cp(root+'web',root+'dist',{recursive:true});
 await mkdir(root+'dist/media',{recursive:true});
-await cp(root+'media/bubble-tutorial-v3.mp4',root+'dist/media/bubble-tutorial.mp4');
+await cp(root+'media/bubble-tutorial.mp4',root+'dist/media/bubble-tutorial.mp4');
 await cp(root+'media/bubble-poster.png',root+'dist/media/bubble-poster.png');
 for (const name of ['algorithm-arena-intro.gif', 'algorithm-arena-intro-still.png']) {
   await cp(root+'media/'+name,root+'dist/media/'+name);

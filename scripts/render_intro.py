@@ -53,7 +53,9 @@ def main():
                     'fps': 1000/durations[0], 'render_seconds': round(render_seconds,2),
                     'total_seconds': round(time.perf_counter()-started,2),
                     'bytes': output.stat().st_size, 'file': str(output.relative_to(ROOT))}
-    (ROOT / 'docs/evidence/intro-gif-metadata.json').write_text(json.dumps(metadata,indent=2)+'\n')
+    evidence = ROOT / 'artifacts/renders/intro'
+    evidence.mkdir(parents=True, exist_ok=True)
+    (evidence / 'metadata.json').write_text(json.dumps(metadata,indent=2)+'\n')
     print(json.dumps(metadata,indent=2))
 
 

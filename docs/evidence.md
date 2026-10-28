@@ -17,14 +17,14 @@ Release films are H.264, 1280×720, 30 fps and silent with embedded captions.
 | Insertion custom [8,3,7,2,6] | 20.900s | 29.54s | 30.73s |
 
 The corrected Bubble tutorial plays for 37.566667s; Bubble custom examples play
-for 19.466667s. See [Bubble measurements](evidence/render-measurements.json) and
+for 19.466667s. See [Bubble measurements](evidence/bubble/render-measurements.json) and
 [Insertion measurements](evidence/insertion/measurements.json) for measured
 runs, including repeat and worst-case inputs. These reuse warm TeX/text caches;
 process render times are not clean-machine cold starts or output-cache hits.
 
 [Insertion visual review](evidence/insertion/visual-review.md) documents exact
 metrics, reviewed frames, a real failed prototype and its correction. The
-[Bubble source diff](evidence/renderer-changes.diff) preserves the authentic
+[Bubble source diff](evidence/bubble/renderer-changes.diff) preserves the authentic
 cross-filesystem output and caption fixes. All release films were fully decoded;
 actual motion/decision/final frames were reviewed, not just posters.
 
@@ -42,15 +42,36 @@ actual motion/decision/final frames were reviewed, not just posters.
   metadata, 20.9s playback and 35.312s request-to-ready time.
 - [Insertion release verification](evidence/insertion/deployment-verification.json):
   deployed routes and asset checks.
-- [Logo browser checks](evidence/logo-browser-checks.json): **13 passed**;
-  [deployed verification](evidence/logo-deployment.json) confirms the SVG assets,
+- [Logo browser checks](evidence/brand/logo-browser-checks.json): **13 passed**;
+  [deployed verification](evidence/brand/logo-deployment.json) confirms the SVG assets,
   eight-second header loop, static reduced-motion alternative and intact About GIF.
-- [About GIF metadata](evidence/intro-gif-metadata.json): six-second, 720×720,
+- [About GIF metadata](evidence/brand/intro-gif-metadata.json): six-second, 720×720,
   continuously looping original title animation.
 
 These are recorded prior runs, not claims that every command was rerun during
 documentation cleanup. Setup commands are in [setup](setup.md). Fresh QA captures
 belong in ignored `artifacts/`; add only reviewed, useful release proof here.
+
+## Repository cleanup verification
+
+Documentation now uses one-word names, with conventional discovery files retained.
+Retired task briefs, superseded UI captures, duplicate trace metadata and the old
+Bubble tutorial were removed. Meaningful release frames, real defect evidence,
+measurements, both algorithms and custom-example backups remain. Tracked evidence
+fell from 109 files / 12,756,067 bytes to 44 files / 4,052,773 bytes.
+
+Actual checks after cleanup: Python **163 passed**, exit 0, **31.47s**, with the
+same dependency warning; Node validation **1 passed**, exit 0; production build
+exit 0; Insertion static browser **23 passed** and Bubble static browser
+**7 passed**, both with zero runtime exceptions. Agent skill validation and CLI
+dry run passed. Local Markdown links and script syntax checks passed.
+All **19 production files are byte-identical** to the pre-cleanup build.
+
+No release animation was regenerated: playback durations and original render
+measurements above remain unchanged. The existing Python integration test still
+performed its genuine render/decode check. Fresh captures are now written to
+ignored `artifacts/` instead of accumulating in tracked documentation. No website
+redeployment is needed for this source-only cleanup.
 
 ## Limitations
 

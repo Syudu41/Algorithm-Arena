@@ -2,6 +2,8 @@
 import {spawn} from 'node:child_process';
 import {mkdir,writeFile} from 'node:fs/promises';
 const base=(process.env.ARENA_URL || 'http://127.0.0.1:8765').replace(/\/$/,'');
+const evidence='artifacts/browser/insertion';
+await mkdir(evidence,{recursive:true});
 const staticOnly=process.env.ARENA_STATIC_ONLY==='1';
 const chrome=spawn('/usr/bin/google-chrome',['--headless=new','--no-sandbox','--disable-gpu','--autoplay-policy=document-user-activation-required','--remote-debugging-port=0','--user-data-dir=/tmp/arena-chrome-'+process.pid,'about:blank'],{stdio:['ignore','ignore','pipe']});
 let ws;
@@ -55,12 +57,12 @@ try{
     await check('Insertion result is a real video and waits for user play',()=>evaluate('document.querySelector("#custom").duration>=12 && document.querySelector("#custom").duration<=30 && document.querySelector("#custom").paused'));
     const job=await evaluate('(async()=>{const name=new URL(document.querySelector("#custom").src).pathname.split("/").pop().replace(".mp4","");return await(await fetch("/api/renders/"+name)).json()})()');
     await check('API identifies Insertion without a false swaps field',async()=>job.algorithm==='insertion' && job.shifts===7 && job.placements===4 && !('swaps' in job));
-    await writeFile('docs/evidence/insertion/web-local-job.json',JSON.stringify({request_to_ready_seconds:(Date.now()-start)/1000,job},null,2));
+    await writeFile(evidence+'/web-local-job.json',JSON.stringify({request_to_ready_seconds:(Date.now()-start)/1000,job},null,2));
     await evaluate('document.querySelector("#array-form").requestSubmit()');
     await until('document.querySelector("#status").textContent.includes("cache hit")');
     await check('Insertion repeat uses exact algorithm-specific cache',()=>evaluate('document.querySelector("#cache-label").textContent.includes("cache hit")'));
     await send('Emulation.setDeviceMetricsOverride',{width:1440,height:1000,deviceScaleFactor:1,mobile:false});
-    await send('Page.captureScreenshot',{format:'png',captureBeyondViewport:true}).then(r=>writeFile('docs/evidence/insertion/web-local-result.png',Buffer.from(r.data,'base64')));
+    await send('Page.captureScreenshot',{format:'png',captureBeyondViewport:true}).then(r=>writeFile(evidence+'/web-local-result.png',Buffer.from(r.data,'base64')));
   }
   for(const width of [1440,768,390,320]) {
     await send('Emulation.setDeviceMetricsOverride',{width,height:1000,deviceScaleFactor:1,mobile:width<768});
@@ -73,12 +75,12 @@ try{
       if((width===1440 || width===390) && (route==='/sorting' || route.endsWith('insertion-sort'))) {
         if(route.endsWith('insertion-sort'))await until('document.querySelector("#tutorial").readyState>=1');
         const name=route==='/sorting'?'catalog':'lesson';
-        await send('Page.captureScreenshot',{format:'png',captureBeyondViewport:true}).then(r=>writeFile(`docs/evidence/insertion/web-${staticOnly?'static':'local'}-${name}-${width}.png`,Buffer.from(r.data,'base64')));
+        await send('Page.captureScreenshot',{format:'png',captureBeyondViewport:true}).then(r=>writeFile(`${evidence}/web-${staticOnly?'static':'local'}-${name}-${width}.png`,Buffer.from(r.data,'base64')));
       }
     }
   }
   await send('Page.reload');await until('document.querySelector("#tutorial")?.readyState>=1');
   await check('Insertion nested route reload preserves lesson',()=>evaluate('location.hash==="#/sorting/insertion-sort" && document.querySelector("#tutorial").duration>=35'));
   await check('no runtime exceptions',async()=>errors.length===0);
-  await writeFile(`docs/evidence/insertion/web-${staticOnly?'static':'local'}-checks.json`,JSON.stringify({heading,body,results,errors},null,2));
+  await writeFile(`${evidence}/web-${staticOnly?'static':'local'}-checks.json`,JSON.stringify({heading,body,results,errors},null,2));
 } finally {ws?.close();chrome.kill('SIGTERM');}

@@ -12,7 +12,7 @@ trace-to-scene stage, fonts, tests and three original MP4s were preserved.
 
 Real defect: repository-local output failed with a cross-device rename. The
 baseline `/tmp` render test passed because both files were on the same filesystem.
-See the retained [renderer diff](evidence/renderer-changes.diff) and
+See the retained [renderer diff](evidence/bubble/renderer-changes.diff) and
 [evidence](evidence.md).
 This is an authentic debugging example, not a seeded educational failure.
 

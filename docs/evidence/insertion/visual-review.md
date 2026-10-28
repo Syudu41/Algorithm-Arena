@@ -56,7 +56,7 @@ labels the ordered prefix, and green checks mark only global completion.
 An ordered prefix is explicitly allowed to move when future keys are inserted;
 it is never falsely presented as a permanently fixed suffix.
 
-Actual full-resolution captures for **each** proof include initial array, lift,
+Actual full-resolution captures for **each** proof include initial array,
 comparison, mid-shift, no-shift/keep, ordered-prefix and final state. Prefix
 markers are removed while a key is in flight. Comparison cues fade during a
 shift and are cleared after it; they do not remain as false current conditions.
@@ -78,8 +78,8 @@ PATH="$PWD/.venv-manim/bin:$PATH" .venv-manim/bin/python scripts/render_insertio
 
 The script runs fixed trusted scenes, records process/scene time separately,
 uses ffprobe for real codec/size/fps/duration/bytes, and fully decodes each MP4
-through FFmpeg. Full data and event-time records are in `measurements.json` and
-per-proof `*-metadata.json`. The warm TeX/text cache is reused and Manim animation
+through FFmpeg. Reviewed measurements are in `measurements.json`. Fresh runs save full metadata
+and event-time records in ignored `artifacts/renders/insertion/`. The warm TeX/text cache is reused and Manim animation
 caching is disabled. First/repeat figures are process renders, not clean-machine
 cold-start or application output-cache hit measurements.
 
@@ -104,7 +104,7 @@ Retained media paths:
 The first prototype used simultaneous animation of the key VGroup and its child
 box. Manim moved the label while the box's separate transform conflicted, visibly
 separating values and boxes. **Prototype visual FAIL** is retained as
-`prototype-{lift,shift,prefix,complete}.png` and `prototype-metadata.json`;
+`prototype-shift.png` and `prototype-metadata.json`;
 `renderer/renders/insertion/custom1.mp4` is the failed prototype, not a release
 asset. The correction styles the key box before moving its whole VGroup.
 Fresh release renders above show value/box identity intact at lift, shift and
@@ -137,9 +137,9 @@ All fully decoded, exit 0, H.264/yuv420p 1280×720/30fps. The longest measured
 process remains below the local worker's 300s timeout. These reuse the existing
 TeX/text cache; repeat renders can still be slower under different machine load.
 For ten items, all45 comparisons and45 shifts remain visible, plus9 placements;
-the five-item playback range is not a promise for ten-item arrays. Benchmark
-outputs remain in ignored `renderer/renders/insertion/`, while metadata is saved
-in this evidence directory. No concurrent local browser rendering was used during
+the five-item playback range is not a promise for ten-item arrays. Original benchmark
+outputs remain in ignored `renderer/renders/insertion/`; future runs write to
+`artifacts/renders/insertion/`. Reviewed measurements remain in this directory. No concurrent local browser rendering was used during
 these measurements; the coordinator ran static browser checks only.
 
 ## Full renderer regression after benchmarks

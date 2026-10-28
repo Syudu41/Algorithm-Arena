@@ -2,6 +2,8 @@
 import {spawn} from 'node:child_process';
 import {mkdir,writeFile} from 'node:fs/promises';
 const base=(process.env.ARENA_URL || 'http://127.0.0.1:8765').replace(/\/$/,'');
+const evidence='artifacts/browser/bubble';
+await mkdir(evidence,{recursive:true});
 const staticOnly=process.env.ARENA_STATIC_ONLY==='1';
 const chrome=spawn('/usr/bin/google-chrome',['--headless=new','--no-sandbox','--disable-gpu','--autoplay-policy=document-user-activation-required','--remote-debugging-port=0','--user-data-dir=/tmp/arena-chrome-'+process.pid,'about:blank'],{stdio:['ignore','ignore','pipe']});
 let ws;
@@ -43,9 +45,9 @@ try{
     await until('document.querySelector("#tutorial").readyState>=1');
     await check('nested hash route reload preserves tutorial',()=>evaluate('location.hash==="#/sorting/bubble-sort" && document.querySelector("#tutorial").duration>35'));
     await send('Emulation.setDeviceMetricsOverride',{width:1440,height:1000,deviceScaleFactor:1,mobile:false});
-    await send('Page.captureScreenshot',{format:'png',captureBeyondViewport:true}).then(async r=>writeFile('docs/evidence/browser-public.png',Buffer.from(r.data,'base64')));
+    await send('Page.captureScreenshot',{format:'png',captureBeyondViewport:true}).then(async r=>writeFile(evidence+'/browser-public.png',Buffer.from(r.data,'base64')));
     await check('no browser runtime exceptions',async()=>errors.length===0);
-    await writeFile('docs/evidence/public-browser-results.json',JSON.stringify({base,results,errors},null,2));
+    await writeFile(evidence+'/public-browser-results.json',JSON.stringify({base,results,errors},null,2));
   } else {
   await evaluate('document.querySelector("#values").value="1,,2"; document.querySelector("#array-form").requestSubmit()');
   await check('invalid input focused and rejected',()=>evaluate('document.querySelector("#values").getAttribute("aria-invalid")==="true" && document.activeElement.id==="values"'));
@@ -59,10 +61,10 @@ try{
   await check('exact cache hit label',()=>evaluate('document.querySelector("#render-meta").textContent.includes("Exact input cache hit")'));
   await send('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true});
   await check('mobile layout fits viewport',()=>evaluate('document.documentElement.scrollWidth<=window.innerWidth'));
-  await send('Page.captureScreenshot',{format:'png',captureBeyondViewport:true}).then(async r=>writeFile('docs/evidence/browser-mobile.png',Buffer.from(r.data,'base64')));
+  await send('Page.captureScreenshot',{format:'png',captureBeyondViewport:true}).then(async r=>writeFile(evidence+'/browser-mobile.png',Buffer.from(r.data,'base64')));
   await send('Emulation.setDeviceMetricsOverride',{width:1440,height:1000,deviceScaleFactor:1,mobile:false});
   await until('document.querySelector("#custom").readyState>=2');
-  await send('Page.captureScreenshot',{format:'png',captureBeyondViewport:true}).then(async r=>writeFile('docs/evidence/browser-explore.png',Buffer.from(r.data,'base64')));
+  await send('Page.captureScreenshot',{format:'png',captureBeyondViewport:true}).then(async r=>writeFile(evidence+'/browser-explore.png',Buffer.from(r.data,'base64')));
   // Keyboard follows visible focus controls.
   await evaluate('document.querySelector("#values").focus()');
   await send('Input.dispatchKeyEvent',{type:'keyDown',key:'Tab',code:'Tab',windowsVirtualKeyCode:9});await send('Input.dispatchKeyEvent',{type:'keyUp',key:'Tab',code:'Tab',windowsVirtualKeyCode:9});
@@ -99,6 +101,6 @@ try{
   await evaluate('location.hash="/sorting/bubble-sort"');await until('!!document.querySelector("#tutorial")');
   await check('static mode preserves explanation without local-only controls',()=>evaluate('!document.querySelector("#array-form") && !!document.querySelector("#tutorial")'));
   await check('no browser runtime exceptions',async()=>errors.length===0);
-  await writeFile('docs/evidence/browser-results.json',JSON.stringify({results,errors},null,2));
+  await writeFile(evidence+'/browser-results.json',JSON.stringify({results,errors},null,2));
   }
 } finally {ws?.close();chrome.kill('SIGTERM');}

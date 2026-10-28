@@ -13,8 +13,8 @@ import sys
 import time
 
 ROOT=Path(__file__).resolve().parents[1]
-WORK=ROOT/'renderer/renders/insertion'
-EVIDENCE=ROOT/'docs/evidence/insertion'
+WORK=ROOT/'artifacts/renders/insertion/work'
+EVIDENCE=ROOT/'artifacts/renders/insertion'
 
 
 def probe(path):

@@ -40,14 +40,14 @@ node scripts/insertion-smoke.mjs
 The browser smoke script needs installed Google Chrome and local socket access;
 it talks to the real service at port 8765. It also injects HTTP failures to check
 UI errors; these are explicitly labeled in its results. Rendering verification
-writes fresh MP4s and logs to ignored `renderer/renders/verification/` and never
+writes fresh MP4s and logs to ignored `artifacts/renders/bubble/` and never
 replaces the retained baseline media. It reuses the TeX cache and is not a clean
 machine installation benchmark.
 
 ## Backup and reproducible real defect
 
-The corrected `media/bubble-tutorial-v3.mp4` is the public explanation.
-`c52413.mp4` and `c83726.mp4` are offline custom-example
+The corrected `media/bubble-tutorial.mp4` is the public explanation.
+`bubble-custom-52413.mp4` and `bubble-custom-83726.mp4` are offline custom-example
 backups. Insertion Sort has equivalent tutorial and custom-example files. Keep them for the lecture if the
 live renderer fails. The public tutorial works independently of the Python API.
 
@@ -89,3 +89,9 @@ ARENA_URL=https://syudu41.github.io/Algorithm-Arena ARENA_STATIC_ONLY=1 node scr
 
 The reusable `Manim-agent` developer command and its optional parameters are
 explained in [agent](agent.md). This is a development helper, not an AI service in the site.
+
+Fresh browser captures go to `artifacts/browser/{bubble,insertion}/`. Render
+verification and benchmarks use `artifacts/renders/` and `artifacts/benchmarks/`.
+These generated outputs are ignored; curated release proof stays in
+`docs/evidence/`. Release-generation scripts intentionally update their media
+outputs, so review changes before committing.

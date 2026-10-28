@@ -7,7 +7,7 @@ import sys
 import time
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / 'renderer/renders/verification'
+OUT = ROOT / 'artifacts/renders/bubble'
 OUT.mkdir(parents=True, exist_ok=True)
 env = {**os.environ, 'PYTHONPATH': str(ROOT / 'renderer')}
 measurements = []
