@@ -627,3 +627,10 @@ navigation, favicon consistency and no runtime exceptions. Evidence:
 The temporary harness is `/tmp/arena-logo-check.mjs`. No Python/Manim changes
 required an algorithm regression or new video render. Browser verification is
 Chrome-only; design review uses the actual header and enlarged mark captures.
+
+Logo feature source commit: `4465afd`. Published static output as existing
+`gh-pages` commit `751a9ddc14a67be106b1c3bbfdbfc9eade58e364`; Pages reports built
+without error. Live index/styles/favicon/animated SVG returned200 and matched
+the tested build byte-for-byte. Repeated all13 browser checks on the actual
+public site; all passed, including eight-second loop continuation and reduced
+motion. Deployment evidence is saved in `logo-deployment.json`.
