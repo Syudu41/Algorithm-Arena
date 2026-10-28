@@ -577,3 +577,19 @@ is claimed. Terminal Manim-agent launch remains validated offline/protocol-level
 this feature proves the reusable specialist via real Codex delegation. Evidence
 screenshots distinguish static and local mode. Original Bubble media remains
 unchanged. Source feature commit is intentionally separate from font/agent work.
+
+### Insertion Sort release verification
+
+Source features were committed separately: typography `8967d24`, reusable agent
+`987c057`, complete agent-generated Insertion lesson `e5887a1`. A subsequent
+small agent-only clarification (`0d891c2`) makes tutorial-only/custom-only requests
+verify only the requested subset instead of regenerating a full package.
+
+Published the tested static output as existing `gh-pages` commit
+`b3c35f1429304afb3e5a77bdc8323e871a713371`; Pages status built, no error.
+Live app/style/config/tutorial/poster returned200 and matched the build
+byte-for-byte. All23 static Insertion checks also passed against the actual
+public URL, including card order, real playback, actual CMR/Arial-compatible
+fonts, all four routes at320/390/768/1440px, nested reload and hidden local-only
+controls. Full report: `docs/evidence/insertion/deployment-verification.json`.
+No new source branch was created; all source work is on main.
