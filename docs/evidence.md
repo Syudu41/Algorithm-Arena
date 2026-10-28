@@ -1,81 +1,36 @@
-# Verification evidence
+# Verification
 
-This index records observed results from the completed Explore implementation.
-It is agent review, not human sign-off. Current scope is in [plan](plan.md);
-lecture debugging examples are in [story](story.md). Git history retains earlier
-chronological logs and superseded captures.
+Algorithm Arena uses Manim Community Edition 0.19.1 with CMR/TeX scene text.
+Release videos are silent H.264, 1280×720 at 30 fps, with embedded captions.
+Raw frames, trial renders, logs and lecture archives are local development
+artifacts, excluded from this public repository.
 
-## Animation packages
+## Recorded animation measurements
 
-The installed engine is Manim Community Edition 0.19.1 with verified CMR/TeX.
-Release films are H.264, 1280×720, 30 fps and silent with embedded captions.
-
-| Film | Playback | Scene render | Process wall |
+| Required website film | Playback | Scene render | Process wall |
 |---|---:|---:|---:|
+| Bubble tutorial | 37.566667s | See local measurements | See local measurements |
 | Insertion tutorial | 41.166667s | 70.36s | 72.03s |
-| Insertion custom [5,2,4,1,3] | 20.900s | 23.58s | 24.67s |
-| Insertion custom [8,3,7,2,6] | 20.900s | 29.54s | 30.73s |
+| About GIF | 6s loop | See local measurements | See local measurements |
 
-The corrected Bubble tutorial plays for 37.566667s; Bubble custom examples play
-for 19.466667s. See [Bubble measurements](evidence/bubble/render-measurements.json) and
-[Insertion measurements](evidence/insertion/measurements.json) for measured
-runs, including repeat and worst-case inputs. These reuse warm TeX/text caches;
-process render times are not clean-machine cold starts or output-cache hits.
+These are actual previous render measurements, with warm TeX/text caches.
+They are not clean-machine cold-start benchmarks. No release animation was
+regenerated for media cleanup; its playback duration and render measurements
+remain unchanged. Custom-array films are generated on demand by the local
+service, independently of any pre-rendered examples.
 
-[Insertion visual review](evidence/insertion/visual-review.md) documents exact
-metrics, reviewed frames, a real failed prototype and its correction. The
-[Bubble source diff](evidence/bubble/renderer-changes.diff) preserves the authentic
-cross-filesystem output and caption fixes. All release films were fully decoded;
-actual motion/decision/final frames were reviewed, not just posters.
+## Recorded verification
 
-## Recorded regression and release results
+The completed Explore regression suite passed 163 Python tests, including a
+genuine Manim render/decode integration test. Static browser checks passed 23
+Insertion checks and 7 Bubble checks with zero runtime exceptions. The prior
+local browser runs passed 27 Insertion checks and 17 Bubble checks. These are
+recorded runs, not claims of fresh execution on each documentation edit.
 
-- Full Python renderer/service/agent suite: **163 passed**, exit 0, 30.48s.
-  One existing `audioop` deprecation warning under Python 3.11.
-- [Insertion static browser checks](evidence/insertion/web-static-checks.json):
-  **23 passed**; [local checks](evidence/insertion/web-local-checks.json):
-  **27 passed**. Covers catalog order, playback, actual fonts, responsive layouts,
-  public/local boundary, validation, metrics and cache behavior.
-- [Bubble browser regression](evidence/insertion/bubble-regression.json):
-  **17 passed**.
-- [Local Insertion request](evidence/insertion/web-local-job.json): real job
-  metadata, 20.9s playback and 35.312s request-to-ready time.
-- [Insertion release verification](evidence/insertion/deployment-verification.json):
-  deployed routes and asset checks.
-- [Logo browser checks](evidence/brand/logo-browser-checks.json): **13 passed**;
-  [deployed verification](evidence/brand/logo-deployment.json) confirms the SVG assets,
-  eight-second header loop, static reduced-motion alternative and intact About GIF.
-- [About GIF metadata](evidence/brand/intro-gif-metadata.json): six-second, 720×720,
-  continuously looping original title animation.
+Run the commands in [setup](setup.md) to reproduce verification. Fresh outputs
+go to ignored `artifacts/`; only website-required assets belong in `media/`.
+The public static site does not expose the local custom-input form.
 
-These are recorded prior runs, not claims that every command was rerun during
-documentation cleanup. Setup commands are in [setup](setup.md). Fresh QA captures
-belong in ignored `artifacts/`; add only reviewed, useful release proof here.
-
-## Repository cleanup verification
-
-Documentation now uses one-word names, with conventional discovery files retained.
-Retired task briefs, superseded UI captures, duplicate trace metadata and the old
-Bubble tutorial were removed. Meaningful release frames, real defect evidence,
-measurements, both algorithms and custom-example backups remain. Tracked evidence
-fell from 109 files / 12,756,067 bytes to 44 files / 4,052,773 bytes.
-
-Actual checks after cleanup: Python **163 passed**, exit 0, **31.47s**, with the
-same dependency warning; Node validation **1 passed**, exit 0; production build
-exit 0; Insertion static browser **23 passed** and Bubble static browser
-**7 passed**, both with zero runtime exceptions. Agent skill validation and CLI
-dry run passed. Local Markdown links and script syntax checks passed.
-All **19 production files are byte-identical** to the pre-cleanup build.
-
-No release animation was regenerated: playback durations and original render
-measurements above remain unchanged. The existing Python integration test still
-performed its genuine render/decode check. Fresh captures are now written to
-ignored `artifacts/` instead of accumulating in tracked documentation. No website
-redeployment is needed for this source-only cleanup.
-
-## Limitations
-
-Public hosting is static: custom rendering remains local. Films have no audio.
 Human/projector review is pending. Render latency varies with load and input;
-ten-item Insertion films can exceed the five-item duration range. There is no
-Race implementation or public rendering service.
+ten-item films can exceed the typical five-item playback range. There is no
+public rendering service or Race implementation.

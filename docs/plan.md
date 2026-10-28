@@ -77,9 +77,10 @@ permits sockets; distinguish harness failures from application defects.
 Report commands and exit codes, actual test counts, playback durations, render
 timings, visual findings and limitations. Distinguish output-cache misses, warm
 TeX and exact-cache hits; never claim a clean-machine cold benchmark without one.
-Store generated QA output in ignored `artifacts/`; curate only useful reviewed
-release evidence into `docs/evidence/`. Keep authentic defects and fixes for the
-lecture, label injected failures and do not invent human approval.
+Store all generated QA output, custom examples and lecture archives in ignored
+`artifacts/`. Track only website-required media; summarize verified results in
+`docs/evidence.md` without committing raw captures or trials. Label injected
+failures and do not invent human approval.
 
 Publish only the static `dist/` build to `gh-pages`, using a separate checkout and
 normal pushes. Check actual deployed routes/assets when publishing. Custom input

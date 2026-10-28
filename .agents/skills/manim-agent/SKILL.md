@@ -71,8 +71,11 @@ Do not claim a clean-machine cold benchmark unless it was actually performed.
 Return source/media paths, exact input→output and metrics, commands and exit
 codes, render metadata, review frames, visual PASS/FAIL observations and remaining
 limitations. Save fresh render logs, metadata and captures in ignored artifacts/renders/<algorithm>/.
-Curate useful reviewed release proof into docs/evidence/<algorithm>/ and index it
-in docs/evidence.md; do not commit every repeated capture or full trace dump. Failed or unreviewed output is not release-ready.
+Keep raw proof, custom examples, failed prototypes and lecture archives local in
+ignored artifacts/. Track only website-required release tutorials/posters/GIF assets;
+never commit trial media or raw evidence. Summarize actual reviewed results in
+docs/evidence.md without linking to private local captures. An explicit output
+directory does not make custom proof media a public release asset. Failed or unreviewed output is not release-ready.
 
 In delegated mode do not commit; the coordinator reviews the complete feature,
 integrates it, and commits. In direct terminal mode commit the completed,

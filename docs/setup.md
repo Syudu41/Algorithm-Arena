@@ -44,20 +44,15 @@ writes fresh MP4s and logs to ignored `artifacts/renders/bubble/` and never
 replaces the retained baseline media. It reuses the TeX cache and is not a clean
 machine installation benchmark.
 
-## Backup and reproducible real defect
+## Media policy
 
-The corrected `media/bubble-tutorial.mp4` is the public explanation.
-`bubble-custom-52413.mp4` and `bubble-custom-83726.mp4` are offline custom-example
-backups. Insertion Sort has equivalent tutorial and custom-example files. Keep them for the lecture if the
-live renderer fails. The public tutorial works independently of the Python API.
-
-A real defect found during this session: `Path.replace()` tried to move a
-finished `/tmp/arena-…/out.mp4` into the repository across filesystem boundaries,
-raising `OSError: [Errno 18] Invalid cross-device link`. The correction copies
-into a destination-side `.part.mp4` before atomic rename. The baseline test
-had both temporary and output files in `/tmp`, so it missed the defect.
-See the retained source diff in [evidence](evidence.md). Do not present this as a
-seeded defect. Git history preserves the original implementation.
+The public repository tracks only the two lesson tutorials and posters, plus
+the About GIF and its still fallback. Logo and favicon SVGs live in `web/`.
+Custom inputs render on demand through the local service; pre-rendered custom
+examples are not website dependencies. Keep optional lecture backups, failed
+prototypes, screenshots, logs and raw measurements in ignored `artifacts/`.
+The local archive from cleanup is `artifacts/private-archive/`; it is not
+required to build or run the application.
 
 ## GitHub Pages
 
@@ -92,6 +87,6 @@ explained in [agent](agent.md). This is a development helper, not an AI service 
 
 Fresh browser captures go to `artifacts/browser/{bubble,insertion}/`. Render
 verification and benchmarks use `artifacts/renders/` and `artifacts/benchmarks/`.
-These generated outputs are ignored; curated release proof stays in
-`docs/evidence/`. Release-generation scripts intentionally update their media
-outputs, so review changes before committing.
+These generated outputs are ignored. Release-generation scripts intentionally
+update their tutorial/poster assets; custom proofs stay under `artifacts/`.
+Review release changes before committing.

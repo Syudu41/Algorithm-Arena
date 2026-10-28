@@ -50,8 +50,8 @@ See [agent](docs/agent.md) for parameters and both invocation styles.
 | [agent](docs/agent.md) | Animation specialist usage |
 | [evidence](docs/evidence.md) | Reviewed verification and render measurements |
 | [slides](docs/slides.md) | Guest lecture presentation brief |
-| [story](docs/story.md) | Authentic development and debugging examples |
 
 `README.md`, `AGENTS.md` and agent `SKILL.md` retain their conventional names for
 tool discovery. Generated builds, caches and fresh QA captures are ignored;
-reviewed release evidence is kept under `docs/evidence/`.
+raw render evidence and lecture archives stay local under `artifacts/`. Only
+media used by the website is tracked.

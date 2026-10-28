@@ -9,3 +9,15 @@ dist/
 renderer/media/
 media/texts/
 artifacts/
+
+# Public media is an explicit release allowlist. Trials and proofs belong in artifacts/.
+media/*
+!media/algorithm-arena-intro.gif
+!media/algorithm-arena-intro-still.png
+!media/bubble-tutorial.mp4
+!media/bubble-poster.png
+!media/insertion-tutorial.mp4
+!media/insertion-poster.png
+# Raw evidence and session archives must remain local.
+docs/evidence/
+docs/story.md

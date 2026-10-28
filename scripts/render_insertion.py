@@ -54,8 +54,8 @@ def main():
     args=parser.parse_args()
     WORK.mkdir(parents=True,exist_ok=True);EVIDENCE.mkdir(parents=True,exist_ok=True)
     rows=[]
-    cases=[('custom-52413','insertion_custom',[5,2,4,1,3],ROOT/'media/insertion-custom-52413.mp4'),
-           ('custom-83726','insertion_custom',[8,3,7,2,6],ROOT/'media/insertion-custom-83726.mp4'),
+    cases=[('custom-52413','insertion_custom',[5,2,4,1,3],EVIDENCE/'custom-52413.mp4'),
+           ('custom-83726','insertion_custom',[8,3,7,2,6],EVIDENCE/'custom-83726.mp4'),
            ('tutorial','insertion_tutorial',[4,1,6,2,5,3],ROOT/'media/insertion-tutorial.mp4')]
     sys.path.insert(0,str(ROOT/'renderer'))
     from arena.insertion import Compare,PassComplete,SelectKey,Shift,insertion_trace
