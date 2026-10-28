@@ -460,3 +460,15 @@ byte-for-byte (`copy-deployment.json`). Eight public-site Chrome checks passed,
 including learning-focused About copy, no local/Python setup/form content,
 working Explain/playback speed, and nested reload. Updated public results and
 screenshot were captured from the actual deployed URL.
+
+## Typography feature — 2026-10-28
+
+User requested CMR headings and Arial/Inter running text, with a separate commit
+for each completed feature. Set body and UI text to Arial with Helvetica /
+Liberation Sans fallbacks; explicitly retained bundled CMR for h1/h2/h3 and the
+brand title. Manim/GIF text and media are unchanged.
+
+`npm run build`, `npm test`, `node --check web/app.js`, `git diff --check`: exit 0.
+Chrome's platform-font inspection confirmed CMU Serif on the heading and
+Liberation Sans (Arial-compatible) on running text. All three pages fit at
+320/390/768/1440px. Fourteen checks passed; see `typography-checks.json`.

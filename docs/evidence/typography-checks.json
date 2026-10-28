@@ -1,0 +1,41 @@
+{
+  "heading": [
+    {
+      "familyName": "CMU Serif",
+      "postScriptName": "CMUSerif-Italic",
+      "isCustomFont": true,
+      "glyphCount": 7
+    },
+    {
+      "familyName": "CMU Serif",
+      "postScriptName": "CMUSerif-Roman",
+      "isCustomFont": true,
+      "glyphCount": 36
+    }
+  ],
+  "body": [
+    {
+      "familyName": "Liberation Sans",
+      "postScriptName": "LiberationSans",
+      "isCustomFont": false,
+      "glyphCount": 68
+    }
+  ],
+  "results": [
+    "PASS heading renders with bundled CMR",
+    "PASS running text renders with Arial-compatible font",
+    "PASS 320px /about fits viewport",
+    "PASS 320px /sorting fits viewport",
+    "PASS 320px /sorting/bubble-sort fits viewport",
+    "PASS 390px /about fits viewport",
+    "PASS 390px /sorting fits viewport",
+    "PASS 390px /sorting/bubble-sort fits viewport",
+    "PASS 768px /about fits viewport",
+    "PASS 768px /sorting fits viewport",
+    "PASS 768px /sorting/bubble-sort fits viewport",
+    "PASS 1440px /about fits viewport",
+    "PASS 1440px /sorting fits viewport",
+    "PASS 1440px /sorting/bubble-sort fits viewport"
+  ],
+  "errors": []
+}
