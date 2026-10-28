@@ -36,11 +36,11 @@ const about = () => `
   <section class="about-grid" aria-label="About the project">
     <div>
       <p class="eyebrow">See each step</p><h2>Motion that explains.</h2>
-      <p>Highlights show which values are being compared. Swaps reveal how their order changes. Follow each value from the first comparison to its final position.</p>
+      <p>Highlights show which values are being compared. Movement reveals how their order changes. Follow each value from the first comparison to its final position.</p>
     </div>
     <div>
       <p class="eyebrow">At your pace</p><h2>Take a closer look.</h2>
-      <p>Pause the video at a comparison, replay a swap, or slow the animation down. Follow each decision until the next step feels clear.</p>
+      <p>Pause the video at a comparison, replay a move, or slow the animation down. Follow each decision until the next step feels clear.</p>
     </div>
   </section>`;
 
@@ -70,11 +70,20 @@ const sorting = () => `
       </div>
       <div class="tile-diagram insertion-diagram" aria-hidden="true"><span class="ordered">2</span><span class="ordered">4</span><span class="ordered">5</span><span class="key">1</span></div>
     </a>
+    <a class="algorithm-card" data-algorithm="merge" href="#/sorting/merge-sort">
+      <div class="card-copy">
+        <p class="eyebrow">Divide and conquer</p><h2>Merge Sort</h2>
+        <p>Split the array into smaller groups, then merge ordered runs into one sorted whole.</p>
+        <ul class="card-facts" aria-label="Algorithm properties"><li>Stable</li><li>O(n) extra space</li><li>O(n log n) time</li></ul>
+        <span class="card-action">Explore Merge Sort <span aria-hidden="true">↗</span></span>
+      </div>
+      <div class="tile-diagram" aria-hidden="true"><span class="pair">2</span><span>5</span><span class="pair">1</span><span>4</span></div>
+    </a>
   </section>`;
 
-const customInput = (name = 'Bubble Sort') => `
+const customInput = (name = 'Bubble Sort', operations = 'comparison and swap') => `
   <section class="try-section" aria-labelledby="try-title">
-    <div class="try-intro"><p class="eyebrow">Try it yourself</p><h2 id="try-title">Try your own array.</h2><p>Follow every comparison and swap for your values.</p><p class="quiet">2–10 integers, from −99 to 99. Negatives, duplicates, and zero welcome.</p></div>
+    <div class="try-intro"><p class="eyebrow">Try it yourself</p><h2 id="try-title">Try your own array.</h2><p>Follow every ${operations} for your values.</p><p class="quiet">2–10 integers, from −99 to 99. Negatives, duplicates, and zero welcome.</p></div>
     <div class="input-panel">
       <p id="render-availability" class="availability"></p>
       <form id="array-form" novalidate>
@@ -146,7 +155,36 @@ const insertion = () => `
       <p>Already sorted input needs n − 1 comparisons and no shifts. Equal values are never shifted past one another, preserving their original order. The sorting algorithm uses a fixed amount of extra space.</p></div>
     </details>
   </section>
-  ${typeof window.ARENA_CONFIG?.renderApi === 'string' ? customInput('Insertion Sort') : ''}`;
+  ${typeof window.ARENA_CONFIG?.renderApi === 'string' ? customInput('Insertion Sort', 'comparison, shift, and key placement') : ''}`;
+
+
+const merge = () => `
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="#/sorting">Sorting</a><span aria-hidden="true">/</span><span aria-current="page">Merge Sort</span></nav>
+  <section class="detail-heading">
+    <div><p class="eyebrow">Sorting / Merge Sort</p><h1>Merge Sort<span>Split apart. Bring order together.</span></h1></div>
+    <p class="lede">Divide the array until each group holds one value. Merge neighbouring sorted runs, choosing the smaller front value each time.</p>
+  </section>
+  <dl class="complexity-strip" aria-label="Algorithm complexity">
+    <div><dt>Average &amp; worst time</dt><dd>O(n log n)</dd></div>
+    <div><dt>Already sorted</dt><dd>O(n log n)</dd></div>
+    <div><dt>Extra sorting space</dt><dd>O(n)</dd></div>
+    <div><dt>Equal values</dt><dd>Order preserved</dd></div>
+  </dl>
+  <section class="lesson-section" aria-labelledby="learn-title">
+    <div class="section-heading">
+      <div><p class="eyebrow">Watch · under a minute</p><h2 id="learn-title">Build order from smaller runs.</h2></div>
+      <button id="explain" class="button">Explain <span aria-hidden="true">▶</span></button>
+    </div>
+    ${player('tutorial', './media/merge-tutorial.mp4', 'Merge Sort explanation', './media/merge-poster.png')}
+    <ul class="legend" aria-label="Animation key"><li><i class="focus" aria-hidden="true"></i> Compare front values</li><li><i class="swap" aria-hidden="true"></i> Place into the merged run</li><li><i class="done" aria-hidden="true"></i> Fully sorted</li></ul>
+    <details><summary>How Merge Sort works</summary>
+      <div class="explanation-copy"><p>A single value is already sorted. Split each larger group in two, sort both halves, then merge them. Only the front value of each sorted run can be its next smallest value. Choose the smaller front value and repeat; when one run is empty, place the remaining values in order.</p>
+      <p>A comparison counts one front-to-front value comparison. A write counts one placement into a merged output run, including remaining values after one input run empties. Buffer allocation and copy-back bookkeeping are excluded from this counter. These are writes, not swaps.</p>
+      <p>When front values are equal, choose the left one first to preserve their original order. This version always splits and merges, including already sorted input, so its time is O(n log n). The merge buffer needs O(n) extra space.</p>
+      <p>Reference: <a href="https://algs4.cs.princeton.edu/22mergesort/index.php" target="_blank" rel="noopener noreferrer">Princeton Algorithms · Mergesort</a>.</p></div>
+    </details>
+  </section>
+  ${typeof window.ARENA_CONFIG?.renderApi === 'string' ? customInput('Merge Sort', 'comparison and merged placement') : ''}`;
 
 function wireAbout() {
   const image = document.querySelector('#about-intro');
@@ -235,7 +273,7 @@ function wireExplore(algorithm = 'bubble') {
       if (current !== generation) return;
       if (job.status !== 'ready') throw new Error(job.error || `Render ${job.status}`);
       if (job.algorithm !== algorithm || JSON.stringify(job.initial) !== JSON.stringify(values) || !/^\/api\/videos\/[a-f0-9]{32}\.mp4$/.test(job.video_url)) throw new Error('The server returned a mismatched render. Please retry.');
-      const operations = algorithm === 'insertion' ? `${job.shifts} shifts · ${job.placements} key placements` : `${job.swaps} swaps`;
+      const operations = algorithm === 'merge' ? `${job.writes} writes` : algorithm === 'insertion' ? `${job.shifts} shifts · ${job.placements} key placements` : `${job.swaps} swaps`;
       document.querySelector('#summary').textContent = `Input [${job.initial.join(', ')}] → Sorted [${job.final.join(', ')}] · ${job.comparisons} comparisons · ${operations}`;
       document.querySelector('#custom').src = api + job.video_url;
       document.querySelector('#render-meta').textContent = `${job.duration_seconds} s playback · ${job.wall_seconds} s original render wall time · ${(job.bytes/1e6).toFixed(2)} MB · ${job.width}×${job.height} / ${job.fps} fps · ${job.cached ? 'Exact input cache hit' : 'New Manim render'}`;
@@ -253,18 +291,18 @@ function render() {
   cleanup = () => {};
   document.querySelectorAll('video').forEach(v => v.pause());
   const route = location.hash.slice(1) || '/about';
-  const pages = {'/about':about, '/sorting':sorting, '/sorting/bubble-sort':bubble, '/sorting/insertion-sort':insertion};
+  const pages = {'/about':about, '/sorting':sorting, '/sorting/bubble-sort':bubble, '/sorting/insertion-sort':insertion, '/sorting/merge-sort':merge};
   main.innerHTML = (pages[route] || (() => '<section class="page-intro"><p class="eyebrow">Page not found</p><h1>Let’s find your next step.</h1><p class="lede">This page isn’t available. Explore our sorting lesson to continue.</p><a class="button" href="#/sorting">Explore sorting <span aria-hidden="true">↗</span></a></section>'))();
   document.querySelectorAll('header nav a').forEach(a => {
     const active = route === a.hash.slice(1) || (a.hash === '#/sorting' && route.startsWith('/sorting/'));
     if (active) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
   });
-  const title = {'/about': 'About', '/sorting': 'Sorting', '/sorting/bubble-sort': 'Bubble Sort', '/sorting/insertion-sort': 'Insertion Sort'}[route] || 'Page not found';
+  const title = {'/about': 'About', '/sorting': 'Sorting', '/sorting/bubble-sort': 'Bubble Sort', '/sorting/insertion-sort': 'Insertion Sort', '/sorting/merge-sort': 'Merge Sort'}[route] || 'Page not found';
   document.title = `${title} · Algorithm Arena`;
   wirePlayers(); if (route === '/about') wireAbout();
-  if (route === '/sorting/bubble-sort' || route === '/sorting/insertion-sort') {
+  if (route === '/sorting/bubble-sort' || route === '/sorting/insertion-sort' || route === '/sorting/merge-sort') {
     wireLesson();
-    if (document.querySelector('#array-form')) wireExplore(route.endsWith('insertion-sort') ? 'insertion' : 'bubble');
+    if (document.querySelector('#array-form')) wireExplore(route.endsWith('merge-sort') ? 'merge' : route.endsWith('insertion-sort') ? 'insertion' : 'bubble');
   }
   main.focus({preventScroll:true}); window.scrollTo(0,0);
 }

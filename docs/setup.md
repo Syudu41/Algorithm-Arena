@@ -13,7 +13,7 @@ npm run build
 PYTHONPATH=renderer .venv-manim/bin/python -m arena.service
 ```
 
-Open http://127.0.0.1:8765/#/about → Sorting → Bubble Sort or Insertion Sort. Click Explain, then
+Open http://127.0.0.1:8765/#/about → Sorting → Bubble Sort, Insertion Sort or Merge Sort. Click Explain, then
 submit `5,2,4,1,3`. Wait for Ready and press Play. Repeat for an exact cache hit.
 `--port 8766 --timeout 300` configures the local server. Keep this service local;
 it is intentionally bound to loopback, uses same-origin POST requests, and is
@@ -33,6 +33,7 @@ npm test
 npm run build
 node scripts/browser-smoke.mjs
 node scripts/insertion-smoke.mjs
+node scripts/merge-smoke.mjs
 .venv-manim/bin/python scripts/verify_renders.py
 .venv-manim/bin/python scripts/render_insertion.py --benchmarks
 ```
@@ -46,7 +47,7 @@ machine installation benchmark.
 
 ## Media policy
 
-The public repository tracks only the two lesson tutorials and posters, plus
+The public repository tracks only the lesson tutorials and posters, plus
 the About GIF and its still fallback. Logo and favicon SVGs live in `web/`.
 Custom inputs render on demand through the local service; pre-rendered custom
 examples are not website dependencies. Keep optional lecture backups, failed
@@ -80,6 +81,7 @@ To check a static build/site with the retained Insertion browser harness:
 
 ```sh
 ARENA_URL=https://syudu41.github.io/Algorithm-Arena ARENA_STATIC_ONLY=1 node scripts/insertion-smoke.mjs
+node scripts/merge-smoke.mjs
 ```
 
 The reusable `Manim-agent` developer command and its optional parameters are
@@ -90,3 +92,19 @@ verification and benchmarks use `artifacts/renders/` and `artifacts/benchmarks/`
 These generated outputs are ignored. Release-generation scripts intentionally
 update their tutorial/poster assets; custom proofs stay under `artifacts/`.
 Review release changes before committing.
+
+## Merge Sort
+
+Merge Sort appears below Insertion Sort at `#/sorting/merge-sort`. The public
+lesson includes a genuine Manim explanation; the local service enables exact
+custom arrays. For [5,2,4,1,3], this stable top-down implementation reports
+8 comparisons and 12 writes. A write means placement into a merged output run,
+including remaining values when one input run empties; copy-back bookkeeping is
+excluded. Equal front values are taken from the left run first.
+
+```sh
+ARENA_URL=https://syudu41.github.io/Algorithm-Arena ARENA_STATIC_ONLY=1 node scripts/merge-smoke.mjs
+```
+
+Custom proof videos, screenshots and full measurements stay in ignored
+`artifacts/`. Only the required Merge tutorial and poster are tracked.

@@ -9,7 +9,7 @@ in Git. Lecture requirements live in [slides](slides.md).
 
 ## Current scope
 
-Explore follows About → Sorting → Bubble Sort or Insertion Sort. Each lesson
+Explore follows About → Sorting → Bubble Sort, Insertion Sort or Merge Sort. Each lesson
 plays a bundled explanatory video with user-operated playback controls. The local
 demo additionally accepts exact custom arrays and renders them through Python.
 The public GitHub Pages site hides local-only forms and never calls localhost.
@@ -28,7 +28,8 @@ copied branding. No migration is needed for the working renderer.
   Arial, Helvetica or Liberation Sans.
 - Show the actual comparison, physical movement and object identity. Bubble
   swaps tiles and fixes a suffix; Insertion holds a key, shifts values and grows
-  an ordered prefix that may still move.
+  an ordered prefix that may still move. Merge splits smaller problems and
+  physically places values from sorted input runs into a merged output run.
 - Explain keep decisions as well as changes. Avoid overlapping captions, stale
   highlights, invisible swaps and decorative motion unrelated to the algorithm.
 - Release output is H.264 MP4, 1280×720 at 30 fps. Tutorials run 35–60 seconds;
@@ -57,7 +58,8 @@ restrictions, timeouts and resource bounds. Do not expose the local service as
 a public API without a separate hosting/security design.
 
 Metrics describe actual operations: comparisons and swaps for Bubble;
-comparisons, shifts and key placements for Insertion. Video duration and render
+comparisons, shifts and key placements for Insertion; comparisons and merged
+output writes for Merge. Video duration and render
 wall time are not algorithm-performance benchmarks.
 
 ## Delivery and review

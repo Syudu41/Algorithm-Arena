@@ -7,7 +7,7 @@ case study for a lecture on AI-assisted software development. The application
 contains no runtime AI.
 
 [Open the website](https://syudu41.github.io/Algorithm-Arena/).
-Explore Bubble Sort and Insertion Sort, with CMR headings and Arial-compatible
+Explore Bubble Sort, Insertion Sort and Merge Sort, with CMR headings and Arial-compatible
 body text. The public static site plays bundled explanations; exact custom-array
 rendering is available through the local Python service.
 

@@ -27,7 +27,7 @@ try{
   await until('document.querySelector("h1")?.textContent.includes("thinks")');
   await send('Page.bringToFront');
   await evaluate('location.hash="/sorting"');
-  await until('document.querySelectorAll(".algorithm-card").length===2');
+  await until('document.querySelectorAll(".algorithm-card").length===3');
   await check('Insertion card follows Bubble Sort',()=>evaluate('(()=>{const c=[...document.querySelectorAll(".algorithm-card")];return c[0].dataset.algorithm==="bubble" && c[1].dataset.algorithm==="insertion" && c[1].getBoundingClientRect().top>=c[0].getBoundingClientRect().bottom})()'));
   await evaluate('document.querySelector("[data-algorithm=insertion]").click()');
   await until('document.title.startsWith("Insertion Sort")');

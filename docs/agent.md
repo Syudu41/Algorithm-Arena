@@ -10,6 +10,7 @@ In Codex, ask:
 
 ```text
 Manim-agent insertion sort algo
+Manim-agent merge sort algo
 Manim-agent insertion sort algo https://algs4.cs.princeton.edu/21elementary/
 Manim-agent bubble sort --values 5,2,4,1,3 --mode custom --pace slow
 ```

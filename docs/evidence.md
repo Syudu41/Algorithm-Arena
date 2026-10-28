@@ -85,3 +85,28 @@ original hashes. Physical-projector and human visual review remain pending.
 Full renderer/service/agent regression after animation review: **197 passed**,
 exit 0, **37.58s**, including the existing genuine Bubble MP4 render/decode test.
 One existing dependency warning (`audioop` deprecation under Python 3.11).
+
+## Merge website integration
+
+Merge Sort is the third catalog card, below Insertion Sort, with its own lesson
+and bundled 48.10s explanation. The local demo accepts exact custom arrays; the
+public build hides local-only forms. The build versions mutable JS/CSS and brand
+asset URLs by content hash to prevent stale assets after new releases.
+
+Actual browser results: Merge static **27 passed**, Merge local **31 passed**,
+Insertion static regression **23 passed**, Bubble static regression **7 passed**;
+zero runtime exceptions in all four runs. Checks cover actual Explain playback,
+CMR heading/Arial-compatible body fonts, validation, exact metrics, cache reuse,
+nested-route reload and responsive layouts at 320/390/768/1440px. Desktop catalog
+and mobile lesson screenshots were also reviewed locally.
+
+The fresh local Merge job was not an output-cache hit: [5,2,4,1,3] became
+[1,2,3,4,5], with 8 comparisons/12 writes, 18.233s playback, 51.87s scene render,
+54.18s process wall and 54.45s request-to-ready. The repeat used the exact cache.
+Render times vary with load; speed controls affect playback only.
+
+Node validation: **1 passed**, exit 0. Production build, content-hash URL checks,
+Markdown links and diff whitespace checks passed. The output contains exactly
+21 required files and no trial/archive media. All six prior release media files
+retain their original bytes. No public custom-render API, audio or Race feature
+was added. Human/projector review remains pending.
