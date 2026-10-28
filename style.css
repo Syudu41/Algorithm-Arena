@@ -56,8 +56,9 @@ header {
   min-height: 100px;
   border-bottom: 1px solid var(--line);
 }
-.brand { display: inline-flex; align-items: center; gap: 12px; font-size: 24px; letter-spacing: -.5px; text-decoration: none; white-space: nowrap; }
-.brand-mark { color: var(--yellow); font-size: 26px; }
+.brand { display: inline-flex; min-height: 44px; align-items: center; gap: 12px; font-size: 24px; letter-spacing: -.5px; text-decoration: none; white-space: nowrap; }
+.brand-symbol { display: block; flex-shrink: 0; }
+.brand-mark { display: block; width: 36px; height: 36px; flex-shrink: 0; }
 header nav { display: flex; gap: 12px; }
 header nav a {
   display: flex;
@@ -215,7 +216,8 @@ input[aria-invalid] { border-color: var(--red); }
   header, main, footer { padding-inline: 22px; }
   header { min-height: 78px; gap: 12px; }
   .brand { font-size: 21px; }
-  .brand-mark { display: none; }
+  .brand { gap: 9px; }
+  .brand-mark { width: 30px; height: 30px; }
   header nav { gap: 4px; }
   header nav a { padding-inline: 10px; font-size: 13px; }
   h1 { font-size: clamp(38px, 8vw, 54px); letter-spacing: -1px; }
@@ -258,8 +260,10 @@ input[aria-invalid] { border-color: var(--red); }
 
 @media (max-width: 360px) {
   header, main, footer { padding-inline: 18px; }
-  .brand { font-size: 19px; }
-  header nav a { padding-inline: 8px; font-size: 12px; }
+  header { gap: 8px; }
+  .brand { font-size: 18px; gap: 7px; }
+  .brand-mark { width: 26px; height: 26px; }
+  header nav a { min-width: 44px; justify-content: center; padding-inline: 6px; font-size: 12px; }
   .algorithm-card, .input-panel { padding: 20px; }
   .tile-diagram { gap: 8px; }
   .tile-diagram > span { width: 48px; height: 48px; }
